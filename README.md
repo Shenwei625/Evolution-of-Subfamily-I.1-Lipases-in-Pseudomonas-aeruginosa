@@ -84,7 +84,6 @@ Mash的原理：首先把两个序列集合打碎成固定长度的短片段，�
 #利用linuxbrew进行下载
 brew install mash
 
-mash --version      #查看版本
 mash --help
 ```
 ### 3.2 PHYLIP下载
