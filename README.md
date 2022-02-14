@@ -12,5 +12,5 @@
 ### 1.1 基因组数据（实验数据）
 
 ```bash
-
+mkdir -p /mnt/d/project/Evolution     #工作路径
 ```
