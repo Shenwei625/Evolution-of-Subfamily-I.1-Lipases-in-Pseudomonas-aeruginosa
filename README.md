@@ -25,7 +25,7 @@ mkdir -p /mnt/d/project/Evolution/lipase
 
 ### 2.1 BLAST工具下载
 
-+ 简介：
++ 简介
 
 BLAST，全称Basic Local Alignment Search Tool，即"基于局部比对算法的搜索工具"，由Altschul等人于1990年发布。BLAST能够实现比较两段核酸或者蛋白序列之间的同源性的功能，它能够快速的找到两段序列之间的同源序列并对比对区域进行打分以确定同源性的高低。
 
