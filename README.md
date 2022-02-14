@@ -139,7 +139,25 @@ muscle --help
 ```
 
 ## 5. 共线性分析
+### 5.1 Easyfig下载
++ 简介
 
+[Easyfig](http://mjsull.github.io/Easyfig/)是一个基因组比较可视化的工具，可以创建多个基因组位点的线性比较图形。
+
++ 下载
+```bash
+wget https://github.com/mjsull/Easyfig/releases/download/2.2.2/Easyfig_2.2.2_linux.tar.gz
+
+tar -xzvf Easyfig_2.2.2_linux.tar.gz
+
+cd Easyfig_2.2.2_linux
+
+export PATH="$(pwd):$PATH"
+
+source ~/.bashrc
+
+Easyfig --help      #第一个E要大写
+```
 
 ## 6. 差异大的同源蛋白构树
 ### 6.1 CD-HIT下载
