@@ -46,7 +46,19 @@ tblastx：核酸序列对核酸库在蛋白级别的比对，将库和待查序�
 ```
 + 下载
 ```bash
+mkdir -p ~/biosoft #新建文件夹用来存放生信工具
 
+#根据自己的系统，下载blast软件包，这里选用linux的2.12.0版本
+wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.12.0+-x64-linux.tar.gz
+#解压
+tar -xzvf ncbi-blast-2.12.0+-x64-linux.tar.gz
+#配置环境变量
+cd ncbi-blast-2.12.0+
+export PATH="$(pwd):$PATH"
+#刷新.bashrc文件，使环境变量生效
+source ~/.bashrc
+#检验是否安装成功
+blastp -help
 ````
 
 
