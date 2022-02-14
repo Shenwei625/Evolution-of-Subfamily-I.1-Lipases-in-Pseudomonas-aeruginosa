@@ -23,7 +23,7 @@ mkdir -p /mnt/d/project/Evolution/lipase
 
 ## 2. 检索不同假单胞菌中I.1脂肪酶的数量
 
-### 2.1 BLAST工具下载
+### 2.1 BLAST下载
 
 + 简介
 
@@ -62,7 +62,7 @@ blastp -help
 ````
 
 ## 3. 物种树的构建
-### 3.1 MASH工具的下载
+### 3.1 MASH下载
 + 简介
 
 Mash发表在2016年6月Genome Biology的上面，它借用MinHash这样一个搜索引擎常用的判断重复文档的技术而实现，另外增加了计算两两之间突变距离和P值显著性检验。Mash通过把大的序列集合简化成小的sketch，从而快速计算它们之间的广义突变距离（global mutation distances，可以近似地理解为『进化距离』，越大表示两者之间亲缘关系越近，如果是0，表示同一物种）。
@@ -78,7 +78,7 @@ brew install mash
 mash --version      #查看版本
 mash --help
 ```
-### 3.2 PHYLIP工具的下载
+### 3.2 PHYLIP下载
 + 简介
 
 PHYLIP，即系统发育推理包（the PHYLogeny Inference Package），是用于推断系统发育（进化树）的程序包。它可以通过简约性、兼容性、距离矩阵方法和似然性来推断系统发育。它还可以计算共识树、计算树之间的距离、绘制树、通过自举或折刀重新采样数据集、编辑树以及计算距离矩阵。它可以处理核苷酸序列、蛋白质序列、基因频率、限制性位点、限制性片段、距离、离散字符和连续字符等数据。
@@ -121,7 +121,7 @@ make install
 
 
 ## 6. 差异大的同源蛋白构树
-### 6.1 CD-HIT工具下载
+### 6.1 CD-HIT下载
 + 简介
 
 [CD-HIT](http://weizhong-lab.ucsd.edu/cd-hit/)是一个非常广泛使用的程序，用于蛋白质或核苷酸序列的聚类和比较。CD-HIT速度非常快，可以处理非常大的数据库。有助于显著减少许多序列分析任务中的计算和手动工作，并有助于理解数据结构和纠正数据集中的偏差。CD-HIT包有CD-HIT、CD-HIT-2D、CD-HIT-EST、CD-HIT-EST-2D、CD-HIT-454、CD-HIT-PARA、PSI-CD-HIT、CD-HIT-OTU、CD-HIT-LAP、CD-HIT-DUP等
