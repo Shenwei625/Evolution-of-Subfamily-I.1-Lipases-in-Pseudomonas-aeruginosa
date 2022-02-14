@@ -21,7 +21,7 @@ mkdir -p /mnt/d/project/Evolution/genome     #工作路径
 mkdir -p /mnt/d/project/Evolution/lipase
 ```
 
-## 2. 假单胞菌中的脂肪酶数量
+## 2. 检索不同假单胞菌中I.1脂肪酶的数量
 
 ### 2.1 BLAST工具下载
 
