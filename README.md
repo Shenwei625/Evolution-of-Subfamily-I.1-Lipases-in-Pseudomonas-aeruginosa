@@ -12,13 +12,17 @@
 ### 1.1 基因组数据（实验数据）
 
 ```bash
-mkdir -p /mnt/d/project/Evolution/genome     #工作路径
+mkdir -p /mnt/d/project/Evolution/genome
+
+cd /mnt/d/project/Evolution/genome
 ```
 
 ### 1.2 脂肪酶及其分子伴侣序列数据（目标序列）
 
 ```bash
 mkdir -p /mnt/d/project/Evolution/lipase
+
+cd /mnt/d/project/Evolution/lipase
 ```
 
 ## 2. 检索不同假单胞菌中I.1脂肪酶的数量
