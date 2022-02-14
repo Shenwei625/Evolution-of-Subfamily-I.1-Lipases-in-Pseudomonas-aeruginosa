@@ -7,7 +7,7 @@
 
 ![](./IMG/Table1.png)
 
-根据文章Table1提供的数据，从NCBI中选取相应的物种，下载其基因组
+根据文章Table1提供的数据，从[NCBI](https://www.ncbi.nlm.nih.gov/genome)中选取相应的物种，下载其基因组
 
 ### 1.1 基因组数据（实验数据）
 
@@ -63,7 +63,7 @@ blastp -help
 
 ## 3. 物种树的构建
 ### 3.1 MASH工具的下载
-
++ 简介
 ### 3.2 PHYLIP工具的下载
 
 ### 3.3 iTOL工具的下载
