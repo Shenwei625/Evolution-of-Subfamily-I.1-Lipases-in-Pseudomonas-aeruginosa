@@ -110,6 +110,9 @@ make install
 ```
 
 ### 3.3 iTOL美化进化树
++ 进入[iTOL](https://itol.embl.de/)官网并且完成注册
+
+![](./IMG/iTOL1.png)
 
 ## 4. 蛋白树的构建
 ### 4.1 MUSCLE工具的下载
@@ -128,3 +131,4 @@ make install
 + [popucui - 生信黑板报之Mash](https://zhuanlan.zhihu.com/p/24433778)
 + [陈连福的生信博客 - PHYLIP](http://www.chenlianfu.com/?p=1857)
 + [PHYLIP官网](https://evolution.gs.washington.edu/phylip.html)
++ [即见君子 - 使用iTOL美化进化树](https://zhuanlan.zhihu.com/p/42438544)
