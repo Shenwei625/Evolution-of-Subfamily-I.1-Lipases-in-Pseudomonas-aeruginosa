@@ -109,10 +109,15 @@ mash --help
 + 下载
 ```bash
 cd ~/biosoft
+
 wget http://evolution.gs.washington.edu/phylip/download/phylip-3.697.tar.gz
+
 tar -zxvf phylip-3.697.tar.gz
+
 cd phylip-3.697/src
+
 cp Makefile.unx Makefile
+
 make install
 # 可执行文件位于文件夹exe中
 ```
