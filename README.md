@@ -119,7 +119,7 @@ make install
 ```
 
 ### 3.3 iTOL美化进化树
-+ 进入[iTOL](https://itol.embl.de/)官网并且完成注册
++ 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
 
 ![](./IMG/iTOL1.png)
 
