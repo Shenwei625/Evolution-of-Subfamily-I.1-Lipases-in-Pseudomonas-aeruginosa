@@ -15,7 +15,7 @@
 mkdir -p /mnt/d/project/Evolution/genome     #工作路径
 ```
 
-### 1.2 脂肪酶序列数据（目标序列）
+### 1.2 脂肪酶及其分子伴侣序列数据（目标序列）
 
 ```bash
 mkdir -p /mnt/d/project/Evolution/lipase
@@ -61,6 +61,13 @@ source ~/.bashrc
 blastp -help
 ````
 
+## 3. 物种树的构建
+
+### 3.1 MASH工具的下载
+
+### 3.2 PHYLIP工具的下载
+
+### 3.3 iTOL工具的下载
 
 
 ## 参考
