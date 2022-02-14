@@ -50,13 +50,17 @@ mkdir -p ~/biosoft #新建文件夹用来存放生信工具
 
 #根据自己的系统，下载blast软件包，这里选用linux的2.12.0版本
 wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.12.0+-x64-linux.tar.gz
+
 #解压
 tar -xzvf ncbi-blast-2.12.0+-x64-linux.tar.gz
+
 #配置环境变量
 cd ncbi-blast-2.12.0+
 export PATH="$(pwd):$PATH"
+
 #刷新.bashrc文件，使环境变量生效
 source ~/.bashrc
+
 #检验是否安装成功
 blastp -help
 ````
@@ -75,6 +79,7 @@ Mash的原理：首先把两个序列集合打碎成固定长度的短片段，�
 ```bash
 #利用linuxbrew进行下载
 brew install mash
+
 mash --version      #查看版本
 mash --help
 ```
@@ -123,6 +128,7 @@ make install
 + 下载
 ```bash
 brew install muscle
+
 muscle --help
 
 #使用linuxbrew安装的muscle为v3.8.1551,也可以去官网安装最新的版本
@@ -157,6 +163,7 @@ CD-HIT-LAP识别重叠读取
 + 下载
 ```bash
 brew install cd-hit
+
 cd-hit --help
 ```
 
