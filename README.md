@@ -98,7 +98,7 @@ PHYLIP，即系统发育推理包（the PHYLogeny Inference Package），是用�
 6.绘制和修改进化树的软件。
 ```
 
-+下载
++ 下载
 ```bash
 cd ~/biosoft
 wget http://evolution.gs.washington.edu/phylip/download/phylip-3.697.tar.gz
