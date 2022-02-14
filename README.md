@@ -50,4 +50,4 @@ tblastx：核酸序列对核酸库在蛋白级别的比对，将库和待查序�
 
 ## 参考
 
-+[晓金 - Blast](https://www.jianshu.com/p/a912ad4a8dee)
++ [晓金 - Blast](https://www.jianshu.com/p/a912ad4a8dee)
