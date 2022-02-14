@@ -81,7 +81,7 @@ mash --help
 ### 3.2 PHYLIP下载
 + 简介
 
-PHYLIP，即系统发育推理包（the PHYLogeny Inference Package），是用于推断系统发育（进化树）的程序包。它可以通过简约性、兼容性、距离矩阵方法和似然性来推断系统发育。它还可以计算共识树、计算树之间的距离、绘制树、通过自举或折刀重新采样数据集、编辑树以及计算距离矩阵。它可以处理核苷酸序列、蛋白质序列、基因频率、限制性位点、限制性片段、距离、离散字符和连续字符等数据。
+[PHYLIP](https://evolution.gs.washington.edu/phylip.html)，即系统发育推理包（the PHYLogeny Inference Package），是用于推断系统发育（进化树）的程序包。它可以通过简约性、兼容性、距离矩阵方法和似然性来推断系统发育。它还可以计算共识树、计算树之间的距离、绘制树、通过自举或折刀重新采样数据集、编辑树以及计算距离矩阵。它可以处理核苷酸序列、蛋白质序列、基因频率、限制性位点、限制性片段、距离、离散字符和连续字符等数据。
 
 主要有以下6个功能：
 ```
@@ -115,7 +115,18 @@ make install
 ![](./IMG/iTOL1.png)
 
 ## 4. 蛋白树的构建
-### 4.1 MUSCLE工具的下载
+### 4.1 MUSCLE下载
++ 简介
+
+[MUSCLE(Multiple Protein Sequence Alignment)](http://www.drive5.com/muscle/)是一款蛋白质水平多序列比对的软件。MUSCLE 先使用渐进式比对(progressive alignment)获得初始的多序列比对，再使用横向精炼(horizontal refinement)迭代提高多序列比对结果。目前muscle 主要用来在基因组进化部分，因为构建进化树和计算选择压力，都需要将序列对齐，muscle因小而快而普遍运用。
+
++ 下载
+```bash
+brew install muscle
+muscle --help
+
+#使用linuxbrew安装的muscle为v3.8.1551,也可以去官网安装最新的版本
+```
 
 ## 5. 共线性分析
 
@@ -155,6 +166,6 @@ cd-hit --help
 + [《Mash: fast genome and metagenomedistance estimation using MinHash》](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x#CR9)
 + [popucui - 生信黑板报之Mash](https://zhuanlan.zhihu.com/p/24433778)
 + [陈连福的生信博客 - PHYLIP](http://www.chenlianfu.com/?p=1857)
-+ [PHYLIP官网](https://evolution.gs.washington.edu/phylip.html)
 + [即见君子 - 使用iTOL美化进化树](https://zhuanlan.zhihu.com/p/42438544)
 + [oyoli - CD-HIT生信碱基序列去除冗余的方法](https://blog.csdn.net/oyoli/article/details/120784785)
++ [基因学苑 - 生物信息百Jia软件（三）：Muscle](https://www.jianshu.com/p/111dd40cbcec)
