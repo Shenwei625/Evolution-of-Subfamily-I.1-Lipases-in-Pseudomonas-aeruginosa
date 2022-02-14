@@ -122,7 +122,31 @@ make install
 
 ## 6. 差异大的同源蛋白构树
 ### 6.1 CD-HIT工具下载
++ 简介
 
+[CD-HIT](http://weizhong-lab.ucsd.edu/cd-hit/)是一个非常广泛使用的程序，用于蛋白质或核苷酸序列的聚类和比较。CD-HIT速度非常快，可以处理非常大的数据库。有助于显著减少许多序列分析任务中的计算和手动工作，并有助于理解数据结构和纠正数据集中的偏差。CD-HIT包有CD-HIT、CD-HIT-2D、CD-HIT-EST、CD-HIT-EST-2D、CD-HIT-454、CD-HIT-PARA、PSI-CD-HIT、CD-HIT-OTU、CD-HIT-LAP、CD-HIT-DUP等
+
+CD-HIT是一种贪婪的增量聚类方法，首先对输入的序列根据序列的长短进行排序，并从最长到最短的顺序处理它们。将最长的序列自动的分为第一类并作为第一类的代表序列，然后将剩下的序列与在其之前发现的代表性序列进行比较，根据序列相似性将其归为其中的一类或成为新的一个聚类的代表序列，如此遍历所有序列完成聚类过程。 在默认方式中，序列仅和每一个聚类中的代表性序列（为这类中的最长序列）进行比较而不和这个类中的其他序列进行比对。
+
+CD-HIT主要有有以下功能：
+```
+CD-HIT（CD-HIT-EST）将相似的蛋白质（dna）聚集成满足用户定义的相似性阈值的簇。
+
+CD-HIT-2D（CD-HIT-EST-2D）比较2个数据集，并确定db2中与阈值以上的db1相似的序列。
+
+CD-HIT-454从焦磷酸测序读取中识别自然和人工复制品。
+
+CD-HIT-OTU将rRNA标签聚集到OTU中
+
+CD-HIT-DUP从单个或成对的Illumina读取中识别重复项
+
+CD-HIT-LAP识别重叠读取
+```
+
++ 下载
+```bash
+brew install cd-hit
+```
 
 ## 参考
 
@@ -132,3 +156,4 @@ make install
 + [陈连福的生信博客 - PHYLIP](http://www.chenlianfu.com/?p=1857)
 + [PHYLIP官网](https://evolution.gs.washington.edu/phylip.html)
 + [即见君子 - 使用iTOL美化进化树](https://zhuanlan.zhihu.com/p/42438544)
++ [oyoli - CD-HIT生信碱基序列去除冗余的方法](https://blog.csdn.net/oyoli/article/details/120784785)
