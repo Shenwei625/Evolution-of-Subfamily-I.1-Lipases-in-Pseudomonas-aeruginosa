@@ -79,17 +79,46 @@ mash --version      #查看版本
 mash --help
 ```
 ### 3.2 PHYLIP工具的下载
++ 简介
+
+PHYLIP，即系统发育推理包（the PHYLogeny Inference Package），是用于推断系统发育（进化树）的程序包。它可以通过简约性、兼容性、距离矩阵方法和似然性来推断系统发育。它还可以计算共识树、计算树之间的距离、绘制树、通过自举或折刀重新采样数据集、编辑树以及计算距离矩阵。它可以处理核苷酸序列、蛋白质序列、基因频率、限制性位点、限制性片段、距离、离散字符和连续字符等数据。
+
+主要有以下6个功能：
+```
+1.DNA和蛋白序列数据的分析软件；
+
+2.序列数据转变为距离数据后，对距离数据分析的软件；
+
+3.对基因频率和连续的元素分析的软件；
+
+4.把序列的每个碱基/氨基酸独立看待时对序列进行分析的软件；
+
+5.按照DOLLO简约型算法对序列进行分析的软件；
+
+6.绘制和修改进化树的软件。
+```
+
++下载
+```bash
+cd ~/biosoft
+wget http://evolution.gs.washington.edu/phylip/download/phylip-3.697.tar.gz
+tar -zxvf phylip-3.697.tar.gz
+cd phylip-3.697/src
+cp Makefile.unx Makefile
+make install
+# 可执行文件位于文件夹exe中
+```
 
 ### 3.3 iTOL工具的下载
 
 ## 4. 蛋白树的构建
-
+### 4.1 MUSCLE工具的下载
 
 ## 5. 共线性分析
 
 
 ## 6. 差异大的同源蛋白构树
-### 6.1 CD-Hit工具下载
+### 6.1 CD-HIT工具下载
 
 
 ## 参考
@@ -97,3 +126,5 @@ mash --help
 + [晓金 - Blast](https://www.jianshu.com/p/a912ad4a8dee)
 + [《Mash: fast genome and metagenomedistance estimation using MinHash》](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x#CR9)
 + [popucui - 生信黑板报之Mash](https://zhuanlan.zhihu.com/p/24433778)
++ [陈连福的生信博客 - PHYLIP](http://www.chenlianfu.com/?p=1857)
++ [PHYLIP官网](https://evolution.gs.washington.edu/phylip.html)
