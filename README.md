@@ -146,6 +146,7 @@ CD-HIT-LAP识别重叠读取
 + 下载
 ```bash
 brew install cd-hit
+cd-hit --help
 ```
 
 ## 参考
