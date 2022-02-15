@@ -39,9 +39,9 @@ cd /mnt/d/project/Evolution/genome
 >Genbank是一个开放的数据库，对每个基因都含有许多序列。很多研究者或者公司都可以自己提交序列，另外这个数据库每天都要和EMBL和DDBJ交换数据。Genbank的数据可能重复或者不准。
 >而RefSeq数据库被设计成每个人类位点挑出一个代表序列来减少重复，是NCBI提供的校正的序列数据和相关的信息。数据库包括构建的基因组contig、mRNA、蛋白和整个染色体。refseq序列是NCBI筛选过的非冗余数据库，一般可信度比较高。
 
-+ 将下载下来的文件存入genome文件夹并解压缩,重命名为ncbi_genomes
++ 将下载下来的文件存入genome文件夹并解压缩,重命名为pa_genomes。根据repote.txt可知，一些序列可能存在问题而被舍弃
 
-### 1.2 脂肪酶及其分子伴侣序列数据（目标序列）
+### 1.2 I.1脂肪酶及其分子伴侣序列数据（目标序列）
 
 + 建立文件夹用来存放目标序列
 
@@ -50,6 +50,9 @@ mkdir -p /mnt/d/project/Evolution/lipase
 
 cd /mnt/d/project/Evolution/lipase
 ```
++ 获取目标序列的登录号
+
+
 
 ## 2. 检索不同假单胞菌中I.1脂肪酶的数量
 
@@ -57,7 +60,7 @@ cd /mnt/d/project/Evolution/lipase
 
 + 简介
 
-BLAST，全称Basic Local Alignment Search Tool，即"基于局部比对算法的搜索工具"，由Altschul等人于1990年发布。BLAST能够实现比较两段核酸或者蛋白序列之间的同源性的功能，它能够快速的找到两段序列之间的同源序列并对比对区域进行打分以确定同源性的高低。
+[BLAST](https://www.ncbi.nlm.nih.gov/books/NBK279690/)，全称Basic Local Alignment Search Tool，即"基于局部比对算法的搜索工具"，由Altschul等人于1990年发布。BLAST能够实现比较两段核酸或者蛋白序列之间的同源性的功能，它能够快速的找到两段序列之间的同源序列并对比对区域进行打分以确定同源性的高低。
 
 BLAST的运行方式是先用目标序列建数据库（这种数据库称为database，里面的每一条序列称为subject），然后用待查的序列（称为query）在database中搜索，每一条query与database中的每一条subject都要进行双序列比对，从而得出全部比对结果。
 
