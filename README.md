@@ -221,3 +221,4 @@ cd-hit --help
 + [即见君子 - 使用iTOL美化进化树](https://zhuanlan.zhihu.com/p/42438544)
 + [oyoli - CD-HIT生信碱基序列去除冗余的方法](https://blog.csdn.net/oyoli/article/details/120784785)
 + [基因学苑 - 生物信息百Jia软件（三）：Muscle](https://www.jianshu.com/p/111dd40cbcec)
++ [萌小芊 - NCBI微生物基因组批量下载](http://www.360doc.com/content/18/0209/21/33459258_729016495.shtml)
