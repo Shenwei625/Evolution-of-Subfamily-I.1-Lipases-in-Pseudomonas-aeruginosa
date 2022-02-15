@@ -4,20 +4,21 @@
 [《Evolution of Subfamily I.1 Lipases in *Pseudomonas aeruginosa*》](https://link.springer.com/article/10.1007/s00284-021-02589-4)
 
 ## 1. 数据下载
+### 1.1 基因组数据（实验数据）
 
 ![](./IMG/supply1.png)
 
 ![](./IMG/supply2.png)
 
-根据文章附录提供的数据，从[NCBI](https://www.ncbi.nlm.nih.gov/genome)中选取相应的菌株，下载其基因组
+根据文章附录提供的数据，从[NCBI](https://www.ncbi.nlm.nih.gov/genome)中选取相应的菌株，下载其基因组数据
 
-### 1.1 基因组数据（实验数据）
-
++ 建立文件夹用来存放数据
 ```bash
 mkdir -p /mnt/d/project/Evolution/genome
 
 cd /mnt/d/project/Evolution/genome
 ```
+
 
 ### 1.2 脂肪酶及其分子伴侣序列数据（目标序列）
 
