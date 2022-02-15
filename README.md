@@ -108,17 +108,20 @@ blastp -help
 -m: 比对结果的输出显示方式，值为0~11，默认是0。各个数字含义见下表。
 ```
 | 数值 | 代表含义 |
-| --- | ------ |
+| --- | ------------ |
 | 0 | pairwise |
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
-|||
+| 1 | query-anchored showing identities |
+| 2 | query-anchored no identities |
+| 3 | flat query-anchored, show identities |
+| 4 | flat query-anchored, no identities |
+| 5 | query-anchored no identities and blunt ends |
+| 6 | flat query-anchored, no identities and blunt ends |
+| 7 | XML Blast output |
+| 8 | tabular |
+| 9 | tabular with comment lines |
+| 10 | ASN, text |
+| 11 | ASN, binary Integer |
+
 ## 3. 物种树的构建
 ### 3.1 MASH下载
 + 简介
@@ -246,6 +249,7 @@ cd-hit --help
 ## 参考
 
 + [晓金 - Blast](https://www.jianshu.com/p/a912ad4a8dee)
++ [本地使用Blast应用](https://ngs-data-for-pathogen-analysis.readthedocs.io/zh_CN/latest/chapter_02/01_blast.html)
 + [《Mash: fast genome and metagenomedistance estimation using MinHash》](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x#CR9)
 + [popucui - 生信黑板报之Mash](https://zhuanlan.zhihu.com/p/24433778)
 + [陈连福的生信博客 - PHYLIP](http://www.chenlianfu.com/?p=1857)
