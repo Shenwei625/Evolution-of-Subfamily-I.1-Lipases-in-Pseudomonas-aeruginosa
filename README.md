@@ -18,7 +18,21 @@ mkdir -p /mnt/d/project/Evolution/genome
 
 cd /mnt/d/project/Evolution/genome
 ```
++ 将附录表格中的Assembly number列存入一个txt文件
 
+![](./IMG/LIST.png)
+
++ 登录[Batch Entrez网站](https://www.ncbi.nlm.nih.gov/sites/batchentrez),将准备好的登录号文件上传至该网址，点击Retrive
+
+![](./IMG/batch.png)
+
++ 跳转到统计界面，共搜索到647条序列，点击UID
+
+![](./IMG/UID.png)
+
++ 在新跳转出来的界面中点击Download Assemblies,选择下载的格式后下载
+
+![](./IMG/download.png)
 
 ### 1.2 脂肪酶及其分子伴侣序列数据（目标序列）
 
