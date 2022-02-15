@@ -43,6 +43,8 @@ cd /mnt/d/project/Evolution/genome
 
 ### 1.2 脂肪酶及其分子伴侣序列数据（目标序列）
 
++ 建立文件夹用来存放目标序列
+
 ```bash
 mkdir -p /mnt/d/project/Evolution/lipase
 
