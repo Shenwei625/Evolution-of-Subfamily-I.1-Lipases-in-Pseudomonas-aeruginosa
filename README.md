@@ -143,7 +143,23 @@ brew install mash
 
 mash --help
 ```
-### 3.2 PHYLIP下载
+### 3.2 聚类
+```bash
+mkdir /mnt/d/project/Evolution/grouping
+cd /mnt/d/project/Evolution/grouping
+
+#将所有的序列合并
+gzip -dcf ../genome/pa_genomes/*.fna.gz > ../genome/pa_genomes.fa
+cat genome.fa |
+  grep ">" |
+  head -n 10          #查看是否合并成功
+
+#make sketch
+cat ../genome/pa_genomes.fa |
+  mash sketch -k 16 -s 400 -i -p 8 - -o pa_genomes.k15s400.msh
+```
+
+### PHYLIP下载
 + 简介
 
 [PHYLIP](https://evolution.gs.washington.edu/phylip.html)，即系统发育推理包（the PHYLogeny Inference Package），是用于推断系统发育（进化树）的程序包。它可以通过简约性、兼容性、距离矩阵方法和似然性来推断系统发育。它还可以计算共识树、计算树之间的距离、绘制树、通过自举或折刀重新采样数据集、编辑树以及计算距离矩阵。它可以处理核苷酸序列、蛋白质序列、基因频率、限制性位点、限制性片段、距离、离散字符和连续字符等数据。
@@ -179,7 +195,7 @@ make install
 # 可执行文件位于文件夹exe中
 ```
 
-### 3.3 iTOL美化进化树
+### iTOL美化进化树
 + 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
 
 ![](./IMG/iTOL1.png)
