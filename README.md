@@ -34,6 +34,8 @@ cd /mnt/d/project/Evolution/genome
 
 ![](./IMG/download.png)
 
++ 将下载下来的文件存入genome文件夹并解压缩
+
 ### 1.2 脂肪酶及其分子伴侣序列数据（目标序列）
 
 ```bash
