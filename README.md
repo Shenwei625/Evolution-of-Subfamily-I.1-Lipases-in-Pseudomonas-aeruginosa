@@ -5,9 +5,11 @@
 
 ## 1. 数据下载
 
-![](./IMG/Table1.png)
+![](./IMG/supply1.png)
 
-根据文章Table1提供的数据，从[NCBI](https://www.ncbi.nlm.nih.gov/genome)中选取相应的物种，下载其基因组
+![](./IMG/supply2.png)
+
+根据文章附录提供的数据，从[NCBI](https://www.ncbi.nlm.nih.gov/genome)中选取相应的物种，下载其基因组
 
 ### 1.1 基因组数据（实验数据）
 
