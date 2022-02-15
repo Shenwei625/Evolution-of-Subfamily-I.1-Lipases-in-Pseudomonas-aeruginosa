@@ -34,8 +34,8 @@ cd /mnt/d/project/Evolution/genome
 
 ![](./IMG/download.png)
 
->##Refseq与Genbank数据的区别
->genbank是一个开放的数据库，对每个基因都含有许多序列。很多研究者或者公司都可以自己提交序列，另外这个数据库每天都要和EMBL和DDBJ交换数据。genbank的数据可能重复或者不准。
+>**Refseq与Genbank数据的区别**
+>Genbank是一个开放的数据库，对每个基因都含有许多序列。很多研究者或者公司都可以自己提交序列，另外这个数据库每天都要和EMBL和DDBJ交换数据。Genbank的数据可能重复或者不准。
 >而RefSeq数据库被设计成每个人类位点挑出一个代表序列来减少重复，是NCBI提供的校正的序列数据和相关的信息。数据库包括构建的基因组contig、mRNA、蛋白和整个染色体。refseq序列是NCBI筛选过的非冗余数据库，一般可信度比较高。
 
 + 将下载下来的文件存入genome文件夹并解压缩,重命名为ncbi_genomes
