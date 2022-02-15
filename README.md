@@ -50,9 +50,9 @@ mkdir -p /mnt/d/project/Evolution/lipase
 
 cd /mnt/d/project/Evolution/lipase
 ```
-+ 获取目标序列的登录号
++ 根据文章提供的参考文献，获取目标序列的登录号
 
-
+![](./IMG/I.1.png)
 
 ## 2. 检索不同假单胞菌中I.1脂肪酶的数量
 
