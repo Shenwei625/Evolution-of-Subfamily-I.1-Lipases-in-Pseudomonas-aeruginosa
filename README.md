@@ -157,6 +157,34 @@ cat genome.fa |
 #make sketch
 cat ../genome/pa_genomes.fa |
   mash sketch -k 16 -s 400 -i -p 8 - -o pa_genomes.k15s400.msh
+  
+#split
+mkdir -p job
+
+faops size ../genome/pa_genomes.fa |
+  cut -f 1 |
+  split -l 100 -a 3 -d - job/
+
+#make sketch
+find job -maxdepth 1 -type f -name "[0-9]??" | sort |
+  parallel -j 4 --line-buffer '
+  echo >&2 "==> {}"
+  faops some ../genome/pa_genomes.fa {} stdout |
+  mash sketch -k 16 -s 400 -i -p 6 - -o {}.msh
+  '
+#计算距离
+find job -maxdepth 1 -type f -name "[0-9]??" | sort |
+  parallel -j 4 --line-buffer '
+  echo >&2 "==> {}"
+  mash dist -p 6 {}.msh pa_genomes.k15s400.msh > {}.tsv
+  '
+ 
+ #合并
+ find job -maxdepth 1 -type f -name "[0-9]??" | sort |
+  parallel -j 1 '
+  cat {}.tsv
+  '\
+  > dist_full.tsv
 ```
 
 ### PHYLIP下载
