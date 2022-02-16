@@ -187,7 +187,7 @@ find job -maxdepth 1 -type f -name "[0-9]??" | sort |
   > dist_full.tsv
 ```
 
-### PHYLIP下载
+### 3.3 PHYLIP下载
 + 简介
 
 [PHYLIP](https://evolution.gs.washington.edu/phylip.html)，即系统发育推理包（the PHYLogeny Inference Package），是用于推断系统发育（进化树）的程序包。它可以通过简约性、兼容性、距离矩阵方法和似然性来推断系统发育。它还可以计算共识树、计算树之间的距离、绘制树、通过自举或折刀重新采样数据集、编辑树以及计算距离矩阵。它可以处理核苷酸序列、蛋白质序列、基因频率、限制性位点、限制性片段、距离、离散字符和连续字符等数据。
@@ -220,11 +220,12 @@ cd phylip-3.697/src
 cp Makefile.unx Makefile
 
 make install
-# 可执行文件位于文件夹exe中，输入“./文件名”即可运行
+# 可执行文件位于文件夹exe中，输入“./文件名”即可运行,exe文件夹中的testdata文件夹含有每个应用程序的输入文件格式
 ```
-打开phylip文件夹下的phylip.html可以查看exe文件夹中每个文件的作用
+打开phylip文件夹下的phylip.html可以查看exe文件夹中每个应用的作用
 
-
+### 3.4 使用PHYLIP中的neighbor绘制发育树
+![](./IMG/neighbor.png)
 
 ### iTOL美化进化树
 + 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
