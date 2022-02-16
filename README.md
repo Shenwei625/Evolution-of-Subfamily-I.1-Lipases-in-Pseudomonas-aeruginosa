@@ -185,6 +185,11 @@ find job -maxdepth 1 -type f -name "[0-9]??" | sort |
     cat {}.tsv
   '\
   > dist_full.tsv
+
+#删去和自己对比
+cat dist_full.tsv |
+  tsv-filter --ff-str-ne 1:2 \
+  > connected.tsv
 ```
 
 ### 3.3 PHYLIP下载
