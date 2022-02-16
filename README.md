@@ -143,7 +143,7 @@ brew install mash
 
 mash --help
 ```
-### 3.2 聚类
+### 3.2 获得距离矩阵
 ```bash
 mkdir /mnt/d/project/Evolution/grouping
 cd /mnt/d/project/Evolution/grouping
@@ -157,39 +157,9 @@ cat genome.fa |
 #make sketch
 cat ../genome/pa_genomes.fa |
   mash sketch -k 16 -s 400 -i -p 8 - -o pa_genomes.k15s400.msh
-  
-#split
-mkdir -p job
 
-faops size ../genome/pa_genomes.fa |
-  cut -f 1 |
-  split -l 100 -a 3 -d - job/
-
-#make sketch
-find job -maxdepth 1 -type f -name "[0-9]??" | sort |
-  parallel -j 4 --line-buffer '
-    echo >&2 "==> {}"
-    faops some ../genome/pa_genomes.fa {} stdout |
-    mash sketch -k 16 -s 400 -i -p 6 - -o {}.msh
-  '
 #计算距离
-find job -maxdepth 1 -type f -name "[0-9]??" | sort |
-  parallel -j 4 --line-buffer '
-    echo >&2 "==> {}"
-    mash dist -p 6 {}.msh pa_genomes.k15s400.msh > {}.tsv
-  '
- 
-#合并
-find job -maxdepth 1 -type f -name "[0-9]??" | sort |
-  parallel -j 1 '
-    cat {}.tsv
-  '\
-  > dist_full.tsv
 
-#删去和自己对比
-cat dist_full.tsv |
-  tsv-filter --ff-str-ne 1:2 \
-  > connected.tsv
 ```
 
 ### 3.3 PHYLIP下载
