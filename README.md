@@ -192,8 +192,11 @@ cd phylip-3.697/src
 cp Makefile.unx Makefile
 
 make install
-# 可执行文件位于文件夹exe中
+# 可执行文件位于文件夹exe中，输入“./文件名”即可运行
 ```
+打开phylip文件夹下的phylip.html可以查看exe文件夹中每个文件的作用
+
+
 
 ### iTOL美化进化树
 + 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
