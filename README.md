@@ -179,10 +179,10 @@ find job -maxdepth 1 -type f -name "[0-9]??" | sort |
     mash dist -p 6 {}.msh pa_genomes.k15s400.msh > {}.tsv
   '
  
- #合并
- find job -maxdepth 1 -type f -name "[0-9]??" | sort |
+#合并
+find job -maxdepth 1 -type f -name "[0-9]??" | sort |
   parallel -j 1 '
-     cat {}.tsv
+    cat {}.tsv
   '\
   > dist_full.tsv
 ```
