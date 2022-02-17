@@ -150,7 +150,7 @@ cd /mnt/d/project/Evolution/grouping
 
 #将所有的序列合并
 gzip -dcf ../genome/pa_genomes/*.fna.gz > ../genome/pa_genomes.fa
-cat genome.fa |
+cat pa_genomes.fa |
   grep ">" |
   head -n 10          #查看是否合并成功
 
