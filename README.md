@@ -129,7 +129,14 @@ blastp -help
 ### 2.2 检索
 ```bash
 #构建数据库
-makeblastdb 
+mkdir -p /mnt/d/project/Evolution/blast
+cd /mnt/d/project/Evolution/blast
+
+makeblastdb -in ../lipase/target.fa -dbtype nucl -parse_seqids -out ./index
+# -in 构建数据库所用的序列文件
+# -dbtype 数据库类型，构建的数据库是核苷酸数据库时，dbtype设置为nucl，数据库是氨基酸数据库时，dbtype设置为prot。
+# -out 数据库名称
+# -parse_seqids 为FASTA输入解析seqid
 ```
 
 ## 3. 物种树的构建
