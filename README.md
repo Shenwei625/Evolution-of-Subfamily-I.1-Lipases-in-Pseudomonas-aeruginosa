@@ -98,33 +98,6 @@ source ~/.bashrc
 #检验是否安装成功
 blastp -help
 ````
-+ 参数说明
-```
--p: 指定要运行的 blast 程序。可以调用的有:blastp、blastn、blastx、psitblastn、tblastn、tblastx
--d: 指定要调用数据库，默认值是非冗余(nr)数据库。本地 Blast 比对一般来说都是调用 formatdb 格式化的数据库。
--i: 输入，默认值是终端输入，也可以使用文件的方式，比如 -i seq.fasta
--o: 输出，默认值是终端打印输出，也可以使用文件的方式，比如 -o result.txt
--e: 期望值。
--T: 输出文件格式，默认值为F(False)，想输出HTML格式的可以用 -T T
--M: 矩阵算法选择，默认值是 BLOSUM62
--n: 如果想使用MegaBlast，就设置 -n T
--b: 数据库中的比对结果显示条目数，默认是250条记录。
--m: 比对结果的输出显示方式，值为0~11，默认是0。各个数字含义见下表。
-```
-| 数值 | 代表含义 |
-| --- | ------------ |
-| 0 | pairwise |
-| 1 | query-anchored showing identities |
-| 2 | query-anchored no identities |
-| 3 | flat query-anchored, show identities |
-| 4 | flat query-anchored, no identities |
-| 5 | query-anchored no identities and blunt ends |
-| 6 | flat query-anchored, no identities and blunt ends |
-| 7 | XML Blast output |
-| 8 | tabular |
-| 9 | tabular with comment lines |
-| 10 | ASN, text |
-| 11 | ASN, binary Integer |
 
 ### 2.2 检索
 ```bash
@@ -143,7 +116,49 @@ makeblastdb -in ../lipase/target.fa -dbtype nucl -parse_seqids -out ./index
 # -dbtype 数据库类型，构建的数据库是核苷酸数据库时，dbtype设置为nucl，数据库是氨基酸数据库时，dbtype设置为prot。
 # -out 数据库名称
 # -parse_seqids 为FASTA输入解析seqid
+
+#blastn检索
+blastn -query ../genome/pa_genomes.fa -db ./index -evalue 1e-6 -outfmt 6 -num_threads 6 -out out_file
+#-query 进行检索的序列
+#-db 使用的数据库
+#-evalue 设置输出结果中的e-value阈值。e-value低于1e-5就可认为序列具有较高的同源性
+#-outfmt 输出文件的格式，详细见下表
+#-num_threads 线程数
+-out 输出文件
 ```
+| 数值 | 代表含义 |
+| --- | ------------ |
+| 0 | pairwise |
+| 1 | query-anchored showing identities |
+| 2 | query-anchored no identities |
+| 3 | flat query-anchored, show identities |
+| 4 | flat query-anchored, no identities |
+| 5 | query-anchored no identities and blunt ends |
+| 6 | flat query-anchored, no identities and blunt ends |
+| 7 | XML Blast output |
+| 8 | tabular |
+| 9 | tabular with comment lines |
+| 10 | ASN, text |
+| 11 | ASN, binary Integer |
+
+### 2.3 结果分析
+```bash
+head -n 3 out_file
+NC_002516.2     U75975.1_cds_AAC34733.1_1       99.677  930     3       0       5402016 5402945 930     1       0.0     1701
+NC_002516.2     D50587.1_cds_BAA09135.1_1       99.466  936     5       0       3214282 3215217 1       936     0.0     1701
+NC_002516.2     U88907.1_cds_AAB53646.1_1       76.892  489     99      9       1398678 1399160 61      541     8.51e-7 265
+```
+第1列：输入序列的名称
+第2列：比对到的目标序列名称
+第3列：序列相似度
+第4列：比对的有效长度
+第5列：错配数
+第6列：gap数
+第7-8列：输入序列比对上的起始和终止位置
+第9-10列：比对到目标序列的起始和终止位置
+第11列：e-value
+第12列：比对得分
+
 
 ## 3. 物种树的构建
 ### 3.1 MASH下载
