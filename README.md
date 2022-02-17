@@ -124,7 +124,7 @@ blastn -query ../genome/pa_genomes.fa -db ./index -evalue 1e-6 -outfmt 6 -num_th
 #-evalue 设置输出结果中的e-value阈值。e-value低于1e-5就可认为序列具有较高的同源性
 #-outfmt 输出文件的格式，详细见下表
 #-num_threads 线程数
--out 输出文件
+#-out 输出文件名称
 ```
 | 数值 | 代表含义 |
 | --- | ------------ |
