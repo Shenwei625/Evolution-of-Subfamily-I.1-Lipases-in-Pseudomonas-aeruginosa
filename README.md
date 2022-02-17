@@ -128,10 +128,16 @@ blastp -help
 
 ### 2.2 检索
 ```bash
-#构建数据库
 mkdir -p /mnt/d/project/Evolution/blast
 cd /mnt/d/project/Evolution/blast
 
+#将所有的序列合并
+gzip -dcf ../genome/pa_genomes/*.fna.gz > ../genome/pa_genomes.fa
+cat ../genoma/pa_genomes.fa |
+  grep ">" |
+  wc -l
+
+#构建数据库
 makeblastdb -in ../lipase/target.fa -dbtype nucl -parse_seqids -out ./index
 # -in 构建数据库所用的序列文件
 # -dbtype 数据库类型，构建的数据库是核苷酸数据库时，dbtype设置为nucl，数据库是氨基酸数据库时，dbtype设置为prot。
@@ -160,12 +166,6 @@ mash --help
 ```bash
 mkdir /mnt/d/project/Evolution/grouping
 cd /mnt/d/project/Evolution/grouping
-
-#将所有的序列合并
-gzip -dcf ../genome/pa_genomes/*.fna.gz > ../genome/pa_genomes.fa
-cat pa_genomes.fa |
-  grep ">" |
-  head -n 10          #查看是否合并成功
 
 #make sketch
 cat ../genome/pa_genomes.fa |
