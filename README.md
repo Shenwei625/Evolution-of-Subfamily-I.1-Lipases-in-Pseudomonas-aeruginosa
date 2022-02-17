@@ -176,7 +176,14 @@ NC_002516.2     U88907.1_cds_AAB53646.1_1       76.892  489     99      9       
 cat out_file |
   cut -f 1 > statistic.txt
 
-#
+#利用perl的脚本（script文件夹中）进行统计
+perl statistic.pl
+head RESULT.txt
+NC_002516.2     3
+NC_004129.6     2
+NC_004578.1     1
+NC_007492.2     1
+NC_008463.1     3
 ```
 
 
