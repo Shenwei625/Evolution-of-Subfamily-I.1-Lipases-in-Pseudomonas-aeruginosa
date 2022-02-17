@@ -1,0 +1,7 @@
+Building a new DB, current time: 02/17/2022 10:56:02
+New DB name:   /mnt/d/project/Evolution/blast/index
+New DB title:  ../lipase/target.fa
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 11 sequences in 2.35231 seconds.
