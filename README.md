@@ -342,3 +342,4 @@ cd-hit --help
 + [基因学苑 - 生物信息百Jia软件（三）：Muscle](https://www.jianshu.com/p/111dd40cbcec)
 + [萌小芊 - NCBI微生物基因组批量下载](http://www.360doc.com/content/18/0209/21/33459258_729016495.shtml)
 + [NCBI参考序列（Refseq）常见问题回答](https://www.plob.org/article/3460.html)
++ [《MUSCLE: multiple sequence alignment with high accuracy and high throughput》](https://academic.oup.com/nar/article/32/5/1792/2380623)
