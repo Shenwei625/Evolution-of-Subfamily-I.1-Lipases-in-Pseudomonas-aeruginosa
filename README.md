@@ -258,6 +258,10 @@ make install
 ### 3.4 使用PHYLIP中的neighbor绘制发育树
 ![](./IMG/neighbor.png)
 
++ PHYLIP格式说明
+
+
+
 ### iTOL美化进化树
 + 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
 
