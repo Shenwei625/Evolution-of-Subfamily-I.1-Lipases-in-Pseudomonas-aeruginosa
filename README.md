@@ -215,7 +215,7 @@ cat ../genome/pa_genomes.fa |
   mash sketch -k 16 -s 400 -i -p 8 - -o pa_genomes.k16s400.msh
 
 #计算距离
-
+mash dist -t pa_genomes.k16s400.msh pa_genomes.k16s400.msh
 ```
 
 ### 3.3 PHYLIP下载
