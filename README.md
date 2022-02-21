@@ -215,7 +215,7 @@ cat ../genome/pa_genomes.fa |
   mash sketch -k 16 -s 400 -i -p 8 - -o pa_genomes.k16s400.msh
 
 #计算距离
-mash dist -t  -p 6 pa_genomes.k16s400.msh pa_genomes.k16s400.msh
+mash dist -t  -p 6 pa_genomes.k16s400.msh pa_genomes.k16s400.msh > dist.txt
 ```
 
 ### 3.3 PHYLIP下载
@@ -268,7 +268,19 @@ Orang       1.6606  1.4841  0.7115  0.0000  0.4631  0.5061  0.4710
 Gorilla     1.5243  1.4465  0.5958  0.4631  0.0000  0.3484  0.3083
 Chimp       1.6043  1.4389  0.6179  0.5061  0.3484  0.0000  0.2692
 Human       1.5905  1.4629  0.5583  0.4710  0.3083  0.2692  0.0000
+#第一行说明序列的个数，并且每个序列的名称不能超过10个字符
 ```
++ 更改mash dist输出文件格式
+```bash
+#删去第一行
+cat dist.txt | sed -e "1d" > dist2.txt
+cat dist2.txt | wc -l   
+#808 一共有808个序列
+
+#利用perl的脚本（ten.pl）修改序列名称
+perl ten.pl
+```
+
 
 ### iTOL美化进化树
 + 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
