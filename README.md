@@ -330,7 +330,7 @@ brew install muscle
 
 muscle --help
 
-#使用linuxbrew安装的muscle为v3.8.1551,也可以去官网安装最新的版本
+#用法：muscle -in seqs.fa -out seqs.afa
 ```
 
 ### IQ-Tree下载
