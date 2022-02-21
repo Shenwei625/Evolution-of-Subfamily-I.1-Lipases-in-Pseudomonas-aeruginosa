@@ -178,6 +178,7 @@ cat out_file |
 
 #利用perl的脚本（script文件夹中）进行统计
 perl statistic.pl
+
 head RESULT.txt
 NC_002516.2     3
 NC_004129.6     2
@@ -270,15 +271,18 @@ Chimp       1.6043  1.4389  0.6179  0.5061  0.3484  0.0000  0.2692
 Human       1.5905  1.4629  0.5583  0.4710  0.3083  0.2692  0.0000
 #第一行说明序列的个数，并且每个序列的名称不能超过10个字符
 ```
-+ 更改mash dist输出文件格式
++ 更改mash dist -t 输出文件格式
 ```bash
 #删去第一行
 cat dist.txt | sed -e "1d" > dist2.txt
-cat dist2.txt | wc -l   
+cat dist2.txt | wc -l
 #808 一共有808个序列
 
 #利用perl的脚本（ten.pl）修改序列名称
 perl ten.pl
+
+#将序列数量添加到第一行
+sed "1 i$(cat dist2.txt | wc -l)" -i format.txt
 ```
 
 
