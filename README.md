@@ -306,7 +306,7 @@ consense          dnaml     dolmove   font1     format.txt  move            prom
 cp outtree outfile /mnt/d/project/Evolution/grouping
 ```
 
-### iTOL美化进化树
+### 3.5 iTOL美化进化树
 + 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
 
 ![](./IMG/iTOL1.png)
@@ -332,6 +332,26 @@ muscle --help
 
 #使用linuxbrew安装的muscle为v3.8.1551,也可以去官网安装最新的版本
 ```
+
+### IQ-Tree下载
++ 简介
+[IQ-TREE](http://www.iqtree.org/doc/)是一款基于最大拟然法（ML）的建树软件，具有准确、快速、灵活等特点，简化了参数设置，可以帮助用户选择最佳的进化模型，特别适用于大数据的系统发育分析。
+
++ 下载
+```bash
+brew install iqtree
+
+iqtree --help
+```
+>**几种系统发育推断的算法比较**
+>
+>UPGMA法:UPGMA代表未加权对组方法和算术平均数。这是发展系统进化树的最快技术。由此产生的系统发生树是一个有共同祖先的有根系统发生树。当使用UPGMA方法绘制系统发生树时，它认为所有谱系的进化速率都是一样的，而不考虑突变率。
+>
+>邻接法（neighbor joining）:该方法通过确定距离最近(或相邻)的成对分类单位来使系统树的总距离达到最小，相邻是指两个分类单位在某一无根分叉树中仅通过一个节点(node)相连。通过循序地将相邻点合并成新的点，就可以建立一个相应的拓扑树。
+>
+>最大简约法（maximum parsimony）:这个原则认为：解释一个过程的最好理论是所需假设数目最少的那一个。对所有可能的拓扑结构进行计算，并计算出所需替代数最小的那个拓扑结构，作为最优树。如果在进化时间范围内碱基变更的量较小，则简约法是很合理的（插入、缺失），但对于存在大量变更的情形，随着所用资料的增加，简约法可能给出实际上更为错误的系统树。
+>
+>最大拟然法（maximum likelihood）:选取一个特定的替代模型来分析给定的一组序列数据，使得获得的每一个拓扑结构的似然率都为最大值，然后再挑出其中似然率最大的拓扑结构作为最优树。在最大似然法的分析中，所考虑的参数并不是拓扑结构而是每个拓扑结构的枝长，并对似然率球最大值来估计枝长。
 
 ## 5. 共线性分析
 ### 5.1 Easyfig下载
@@ -398,3 +418,5 @@ cd-hit --help
 + [萌小芊 - NCBI微生物基因组批量下载](http://www.360doc.com/content/18/0209/21/33459258_729016495.shtml)
 + [NCBI参考序列（Refseq）常见问题回答](https://www.plob.org/article/3460.html)
 + [《MUSCLE: multiple sequence alignment with high accuracy and high throughput》](https://academic.oup.com/nar/article/32/5/1792/2380623)
++[IQ-TREE 2: New Models and Efficient Methods for Phylogenetic Inference in the Genomic Era](https://academic.oup.com/mbe/article/37/5/1530/5721363)
++[iqtree2：新模型高效构建系统发育树](https://zhuanlan.zhihu.com/p/164473497)
