@@ -301,6 +301,9 @@ DrawTreeJava.unx  dnadist   dnapenny  factor    font5       libdrawtree.so  pars
 clique            dnainvar  dollop    fitch     font6       mix             penny     restml
 consense          dnaml     dolmove   font1     format.txt  move            proml     retree
 #这里多了一个outfile和一个outtreeshuchuwenjian
+
+#将这两个文件存放到grouping文件夹方便查看
+cp outtree outfile /mnt/d/project/Evolution/grouping
 ```
 
 ### iTOL美化进化树
