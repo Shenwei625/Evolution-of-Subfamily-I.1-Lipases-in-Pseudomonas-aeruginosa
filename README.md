@@ -284,7 +284,24 @@ perl ten.pl
 #将序列数量添加到第一行
 sed "1 i$(cat dist2.txt | wc -l)" -i format.txt
 ```
++ 利用neighbor计算发育树
+```bash
+cd ~/biosoft/phylip-3.697/exe
+cp /mnt/d/project/Evolution/grouping/format.txt ~/biosoft/phylip-3.697/exe
 
+./neighbor
+#neighbor: can't find input file "infile"
+#Please enter a new file name>format.txt  #输入文件名
+
+ls
+DrawGram.jar      contml    dnamlk    dolpenny  font2       gendist         neighbor  promlk    seqboot
+DrawGramJava.unx  contrast  dnamove   drawgram  font3       kitsch          outfile   protdist  test.txt
+DrawTree.jar      dnacomp   dnapars   drawtree  font4       libdrawgram.so  outtree   protpars  treedist
+DrawTreeJava.unx  dnadist   dnapenny  factor    font5       libdrawtree.so  pars      restdist
+clique            dnainvar  dollop    fitch     font6       mix             penny     restml
+consense          dnaml     dolmove   font1     format.txt  move            proml     retree
+#这里多了一个outfile和一个outtreeshuchuwenjian
+```
 
 ### iTOL美化进化树
 + 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
