@@ -278,7 +278,7 @@ cat dist.txt | sed -e "1d" > dist2.txt
 cat dist2.txt | wc -l
 #808 一共有808个序列
 
-#利用perl的脚本（ten.pl）修改序列名称
+#利用perl的脚本（ten.pl）修改序列名称，删去序列名称小数点后面的数字（版本号）以及NZ后的下划线
 perl ten.pl
 
 #将序列数量添加到第一行
