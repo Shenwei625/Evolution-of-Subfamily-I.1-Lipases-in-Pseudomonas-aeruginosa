@@ -311,6 +311,13 @@ cp outtree outfile /mnt/d/project/Evolution/grouping
 
 ![](./IMG/iTOL1.png)
 
++ 导入上文的outtree文件
+
+![](./IMG/iTOL2.png)
+
++ 点击outtree打开并完善发育树
+
+
 ## 4. 蛋白树的构建
 ### 4.1 MUSCLE下载
 + 简介
