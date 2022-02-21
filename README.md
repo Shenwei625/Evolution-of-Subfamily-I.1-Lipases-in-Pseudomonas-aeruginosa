@@ -322,7 +322,7 @@ cp outtree outfile /mnt/d/project/Evolution/grouping
 ### 4.1 MUSCLE下载
 + 简介
 
-[MUSCLE(Multiple Protein Sequence Alignment)](http://www.drive5.com/muscle/)是一款蛋白质水平多序列比对的软件。MUSCLE 先使用渐进式比对(progressive alignment)获得初始的多序列比对，再使用横向精炼(horizontal refinement)迭代提高多序列比对结果。目前muscle 主要用来在基因组进化部分，因为构建进化树和计算选择压力，都需要将序列对齐，muscle因小而快而普遍运用。
+[MUSCLE(MUltiply Sequence Comparision by Log-Exceptation)](http://www.drive5.com/muscle/)是一款蛋白质水平多序列比对的软件。MUSCLE 先使用渐进式比对(progressive alignment)获得初始的多序列比对，再使用横向精炼(horizontal refinement)迭代提高多序列比对结果。目前muscle 主要用来在基因组进化部分，因为构建进化树和计算选择压力，都需要将序列对齐，muscle因小而快而普遍运用。
 
 + 下载
 ```bash
