@@ -300,7 +300,7 @@ DrawTree.jar      dnacomp   dnapars   drawtree  font4       libdrawgram.so  outt
 DrawTreeJava.unx  dnadist   dnapenny  factor    font5       libdrawtree.so  pars      restdist
 clique            dnainvar  dollop    fitch     font6       mix             penny     restml
 consense          dnaml     dolmove   font1     format.txt  move            proml     retree
-#这里多了一个outfile和一个outtreeshuchuwenjian
+#这里多了一个outfile和一个outtree输出文件
 
 #将这两个文件存放到grouping文件夹方便查看
 cp outtree outfile /mnt/d/project/Evolution/grouping
