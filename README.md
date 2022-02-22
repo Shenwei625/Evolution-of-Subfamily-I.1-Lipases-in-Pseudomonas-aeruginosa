@@ -111,14 +111,14 @@ cat ../genoma/pa_genomes.fa |
   wc -l
 
 #构建数据库
-makeblastdb -in ../lipase/target.fa -dbtype nucl -parse_seqids -out ./index
+makeblastdb -in ../genome/pa_genomes.fa -dbtype nucl -parse_seqids -out ./index
 # -in 构建数据库所用的序列文件
 # -dbtype 数据库类型，构建的数据库是核苷酸数据库时，dbtype设置为nucl，数据库是氨基酸数据库时，dbtype设置为prot。
 # -out 数据库名称
 # -parse_seqids 为FASTA输入解析seqid
 
 #blastn检索
-blastn -query ../genome/pa_genomes.fa -db ./index -evalue 1e-6 -outfmt 6 -num_threads 6 -out out_file
+blastn -query ../lipase/target.fa -db ./index -evalue 1e-6 -outfmt 6 -num_threads 6 -out out_file
 #-query 进行检索的序列
 #-db 使用的数据库
 #-evalue 设置输出结果中的e-value阈值。e-value低于1e-5就可认为序列具有较高的同源性
@@ -144,9 +144,9 @@ blastn -query ../genome/pa_genomes.fa -db ./index -evalue 1e-6 -outfmt 6 -num_th
 ### 2.3 结果分析
 ```bash
 head -n 3 out_file
-NC_002516.2     U75975.1_cds_AAC34733.1_1       99.677  930     3       0       5402016 5402945 930     1       0.0     1701
-NC_002516.2     D50587.1_cds_BAA09135.1_1       99.466  936     5       0       3214282 3215217 1       936     0.0     1701
-NC_002516.2     U88907.1_cds_AAB53646.1_1       76.892  489     99      9       1398678 1399160 61      541     8.51e-7 265
+lcl|AF031226.1_gene_1   CP027477.1      96.742  890     27      2       1       889     662634  663522 0.0      1482
+lcl|AF031226.1_gene_1   CP038207.1      92.705  891     65      0       1       891     1204976 12058660.0      1286
+lcl|AF031226.1_gene_1   CP038438.1      92.881  885     62      1       1       884     663883  664767 0.0      1284
 ```
 第1列：输入序列的名称
 
@@ -174,17 +174,18 @@ NC_002516.2     U88907.1_cds_AAB53646.1_1       76.892  489     99      9       
 ```
 #提取第一列
 cat out_file |
-  cut -f 1 > statistic.txt
+  cut -f 2 > statistic.txt
 
 #利用perl的脚本（script文件夹中）进行统计
 perl statistics.pl
 
-head RESULT.txt
-NC_002516.2     3
-NC_004129.6     2
-NC_004578.1     1
-NC_007492.2     1
-NC_008463.1     3
+head -n 5 RESULT.txt
+AE004091.2      2
+AE016853.1      1
+AP012280.1      2
+AP013070.1      1
+AP014522.1      1
+AP014622.1      2
 ```
 
 
