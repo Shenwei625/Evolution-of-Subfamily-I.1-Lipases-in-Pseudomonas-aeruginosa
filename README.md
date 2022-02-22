@@ -177,7 +177,7 @@ cat out_file |
   cut -f 1 > statistic.txt
 
 #利用perl的脚本（script文件夹中）进行统计
-perl statistic.pl
+perl statistics.pl
 
 head RESULT.txt
 NC_002516.2     3
