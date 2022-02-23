@@ -333,6 +333,35 @@ muscle --help
 
 #用法：muscle -in seqs.fa -out seqs.afa
 ```
+### 4.2 提取每个菌株中识别到的序列
++ 利用faops region提取序列
+```
+#用法
+faops region [options] <in.fa> <region.txt> <out.fa>
+options:
+    -s         add strand '(+)' to headers
+    -l INT     sequence line length [80]
+
+<region.txt> is a text file containing one field
+    seq_name:begin-end[,begin-end]
+
+in.fa  == stdin  means reading from stdin
+out.fa == stdout means writing to stdout
+```
+
++ 根据blast结果构建region.txt文件
+```bash
+mkdir /mnt/d/project/Evolution/protine
+cd /mnt/d/project/Evolution/protine
+
+cp ../blast/out_file ./
+perl region.pl  #script文件夹
+```
++ 提取
+```bash
+faops region ../genome/pa_genomes.fa region.txt protine.fa
+```
+
 
 ### IQ-Tree下载
 + 简介
