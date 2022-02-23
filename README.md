@@ -403,10 +403,39 @@ Bayesian Information Criterion:         TIM3+F+G4
 Best-fit model: TIM3+F+G4 chosen according to BIC #这里显示了最佳的模型
 
 #建树
+mkdir tree
+cd tree
+cp ../protine.afa ./
+
+iqtree -s protine.afa -m TIM3+F+G4 -bb 1000 -nt AUTO
+```
+### 4.6 iTOL美化进化树
++ 参考3.5的内容导入进化树
+
+### 4.7 SignalP下载（预测信号肽）
++ 简介
+
+信号肽是蛋白质N-末端一段编码长度为5-30的疏水性氨基酸序列，用于引导新合成蛋白质向通路转移的短肽链。信号肽存在于分泌蛋白、跨膜蛋白和真核生物细胞器内的蛋白中。
+
+信号肽指引蛋白质转移的方式有两种：（1）常规的分泌（Sec/secretory）通路；（2）双精氨酸转移（Tat/twin-arginine）通路。前者存在于原核生物蛋白质转移到质膜过程中，以及真核生物蛋白质转移到内质网膜的过程中。后者存在于细菌、古菌、叶绿体和线粒体中，信号肽序列较长、疏水性较弱且尾部区含有两个连续精氨酸。
+
+信号肽指引蛋白质转运后，将由信号肽酶进行切除。信号肽酶有三种：（1）一型信号肽酶（SPaseI）；（2）二型信号肽酶（SPaseII）；（3）三型信号肽酶（SPaseIII）。大部分信号肽由SPaseI进行移除，SPaseI存在古菌、细菌和真核生物中；细菌和古菌脂蛋白的信号肽C端含有一段称为 lipobox 的保守区域，由SPaseII切除其信号肽；细菌的四型菌毛蛋白信号肽由SPaseIII进行切除。此外：分泌通路（Sec）相关信号肽能由SPaseI、SPaseII和SPaseIII切除，但是双精氨酸转移（Tat）通路相关信号肽仅由 SPaseI和SPaseII切除。
+
+使用SignalP 5.0能对原核生物的信号肽Sec/SPI、Sec/SPII和Tat/SPI，和对真核生物仅含有 Sec/SPI信号肽进行预测。
+
++ 下载
+```bash
+
+```
+### 4.8 PfamScan下载（寻找同源基因家族）
++ 简介
+
++ 下载
+```bash
 
 ```
 
-## 5. 共线性分析
+## 5. 基因岛分析
 ### 5.1 Easyfig下载
 + 简介
 
@@ -474,3 +503,4 @@ cd-hit --help
 + [IQ-TREE 2: New Models and Efficient Methods for Phylogenetic Inference in the Genomic Era](https://academic.oup.com/mbe/article/37/5/1530/5721363)
 + [iqtree2：新模型高效构建系统发育树](https://zhuanlan.zhihu.com/p/164473497)
 + [使用IQ-TREE构建系统进化树](https://www.jianshu.com/p/f830282866cd)
++ [使用SignalP对蛋白序列进行信号肽预测](http://www.chenlianfu.com/?p=2746)
