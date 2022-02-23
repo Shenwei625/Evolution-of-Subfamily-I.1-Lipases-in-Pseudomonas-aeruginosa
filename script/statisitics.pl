@@ -1,6 +1,6 @@
 #! usr/bin/perl
-open LIST, '<statistic.txt' or die "Cannot write to ls.out:$!";
-open STDOUT, '>RESULT.txt' or die "Cannot write to ls.out:$!";
+open LIST, '<statistic.txt' or die "Cannot read from statistic.txt:$!";
+open STDOUT, '>RESULT.txt' or die "Cannot write to RESULT.txt:$!";
 chomp(my @list = <LIST>);
 my %count;
 my $name;
