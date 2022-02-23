@@ -408,6 +408,7 @@ cd tree
 cp ../protine.afa ./
 
 iqtree -s protine.afa -m TIM3+F+G4 -bb 1000 -nt AUTO
+#-bb <#replicates>    Ultrafast bootstrap (>=1000)
 ```
 ### 4.6 iTOL美化进化树
 + 参考3.5的内容导入进化树
@@ -436,7 +437,12 @@ iqtree -s protine.afa -m TIM3+F+G4 -bb 1000 -nt AUTO
 ```
 
 ## 5. 基因岛分析
-### 5.1 Easyfig下载
+基因组岛（英语：Genomic island，GI）是指一个基因组中，有证据显示可能来源于基因水平转移的一段。这一术语通常用于描述微生物，特别是细菌的基因组。GI中的基因可以编码多种功能的蛋白质，可以参与细菌共生或病理过程，并且可以帮助微生物适应环境。
+### 5.1 使用IslandViewer分析和下载假单胞菌基因岛
++ 从NCBI上下载PAO1的GenBank数据
+
+![](./IMG/island.png)
+### Easyfig下载
 + 简介
 
 [Easyfig](http://mjsull.github.io/Easyfig/)是一个基因组比较可视化的工具，可以创建多个基因组位点的线性比较图形。
