@@ -390,8 +390,21 @@ iqtree --help
 >
 >最大拟然法（maximum likelihood）:选取一个特定的替代模型来分析给定的一组序列数据，使得获得的每一个拓扑结构的似然率都为最大值，然后再挑出其中似然率最大的拓扑结构作为最优树。在最大似然法的分析中，所考虑的参数并不是拓扑结构而是每个拓扑结构的枝长，并对似然率球最大值来估计枝长。
 
-### 4.5 使用ModelFinder寻找最佳模型
+### 4.5 使用IQ-TREE建树
+```bash
+#使用ModelFinder寻找最佳模型
+iqtree -s protine.afa -m MF -nt 2
+#-s <alignment>       Input alignment in PHYLIP/FASTA/NEXUS/CLUSTAL/MSF format
+#-m MF                Extended model selection with FreeRate heterogeneity
+#-nt <num_threads>    Number of cores/threads or AUTO for automatic detection
+Akaike Information Criterion:           GTR+F+R6
+Corrected Akaike Information Criterion: TIM3+F+R6
+Bayesian Information Criterion:         TIM3+F+G4
+Best-fit model: TIM3+F+G4 chosen according to BIC #这里显示了最佳的模型
 
+#建树
+
+```
 
 ## 5. 共线性分析
 ### 5.1 Easyfig下载
