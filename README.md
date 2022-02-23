@@ -362,6 +362,9 @@ perl region.pl  #script文件夹
 faops region ../genome/pa_genomes.fa region.txt protine.fa
 ```
 
+### 4.3 MUSCLE对比分析
+
+
 
 ### IQ-Tree下载
 + 简介
