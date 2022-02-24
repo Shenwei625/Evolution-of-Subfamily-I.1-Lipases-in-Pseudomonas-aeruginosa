@@ -62,7 +62,7 @@ cd /mnt/d/project/Evolution/lipase
 brew tap wang-q/tap
 brew install nwr
 
-#2. 安装rust和cargo(cargo安装)
+#2. cargo安装
 curl https://sh.rustup.rs -sSf | sh
 #The cargo, rustc, rustup and other commands will be added toCargo's bin directory, located at:
 #/home/shenwei/.cargo/bin
