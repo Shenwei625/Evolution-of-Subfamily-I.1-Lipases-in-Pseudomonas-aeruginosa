@@ -54,6 +54,47 @@ cd /mnt/d/project/Evolution/lipase
 
 ![](./IMG/I.1.png)
 
+## 1. 数据下载
+### 1.1 基因组数据
++ nwr 下载
+```bash
+#安装rust和cargo（rust包管理器）
+curl https://sh.rustup.rs -sSf | sh
+#The cargo, rustc, rustup and other commands will be added toCargo's bin directory, located at:
+#/home/shenwei/.cargo/bin
+
+cd /home/shenwei/.cargo/bin
+export PATH="$(pwd):$PATH"
+source ~/.bashrc
+
+cargo --help
+cargo install nwr #因为网络问题失败，多尝试几次
+
+nwr --help
+
+nwr 0.5.3
+wang-q <wang-q@outlook.com>
+`nwr` is a lightweight tool for newick and taxonomy
+
+USAGE:
+    nwr [SUBCOMMAND]
+
+OPTIONS:
+    -h, --help       Print help information
+    -V, --version    Print version information
+
+SUBCOMMANDS:
+    append      Append fields of higher ranks to a TSV file
+    download    Download the latest release of `taxdump`
+    help        Print this message or the help of the given subcommand(s)
+    info        Information of Taxonomy ID(s) or scientific name(s)
+    lineage     Output the lineage of the term
+    member      List members (of certain ranks) under ancestral term(s)
+    restrict    Restrict taxonomy terms to ancestral descendants
+    txdb        Init the taxonomy database
+```
+
+
 ## 2. 检索不同假单胞菌中I.1脂肪酶的数量
 
 ### 2.1 BLAST下载
@@ -439,11 +480,18 @@ iqtree -s protine.afa -m TIM3+F+G4 -bb 1000 -nt AUTO
 ## 5. 基因岛分析
 基因组岛（英语：Genomic island，GI）是指一个基因组中，有证据显示可能来源于基因水平转移的一段。这一术语通常用于描述微生物，特别是细菌的基因组。GI中的基因可以编码多种功能的蛋白质，可以参与细菌共生或病理过程，并且可以帮助微生物适应环境。
 ### 5.1 使用IslandViewer分析和下载假单胞菌基因岛
-+ 从NCBI上下载PAO1的GenBank数据，序列太大的话要勾选customize view中的show seqquence选项
++ 从NCBI上下载PAO1的GeneBank数据，序列太大的话要勾选customize view中的show seqquence选项
 
 ![](./IMG/island1.png)
 
-+ 
++ 进入[IsLandViwer 4的Genome Upload](https://www.pathogenomics.sfu.ca/islandviewer/upload/)界面，提交序列的GeneBank数据。
+
+![](./IMG/island2.png)
+
++结果分析
+
+
+
 ### Easyfig下载
 + 简介
 
