@@ -57,8 +57,12 @@ cd /mnt/d/project/Evolution/lipase
 ## 1. 数据下载
 ### 1.1 基因组数据
 + nwr 下载
-```bash
-#安装rust和cargo（rust包管理器）
+```
+#1. brew安装
+brew tap wang-q/tap
+brew install nwr
+
+#2. 安装rust和cargo(cargo安装)
 curl https://sh.rustup.rs -sSf | sh
 #The cargo, rustc, rustup and other commands will be added toCargo's bin directory, located at:
 #/home/shenwei/.cargo/bin
@@ -68,7 +72,7 @@ export PATH="$(pwd):$PATH"
 source ~/.bashrc
 
 cargo --help
-cargo install nwr #因为网络问题失败，多尝试几次
+cargo install nwr 
 
 nwr --help
 
