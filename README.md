@@ -57,7 +57,7 @@ cd /mnt/d/project/Evolution/lipase
 ## 1. 数据下载
 ### 1.1 基因组数据
 + nwr 下载
-```
+```bash
 #1. brew安装
 brew tap wang-q/tap
 brew install nwr
