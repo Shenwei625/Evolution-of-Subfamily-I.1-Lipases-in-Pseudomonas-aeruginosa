@@ -98,6 +98,8 @@ SUBCOMMANDS:
     txdb        Init the taxonomy database
 ```
 + 构建数据库
+
+来源：[wang-q/nwr/doc/assembly.md](https://github.com/wang-q/nwr/blob/master/doc/assembly.md)
 ```bash
 #prepare
 brew install wang-q/tap/tsv-utils
