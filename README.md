@@ -5,57 +5,6 @@
 
 ## 1. 数据下载
 ### 1.1 基因组数据（实验数据）
-
-+ 根据文章附录提供的数据，从NCBI中选取相应的菌株，下载其基因组数据
-
-![](./IMG/supply1.png)
-
-![](./IMG/supply2.png)
-
-+ 建立文件夹用来存放数据
-```bash
-mkdir -p /mnt/d/project/Evolution/genome
-
-cd /mnt/d/project/Evolution/genome
-```
-+ 将附录表格中的Assembly number列存入一个txt文件
-
-![](./IMG/LIST.png)
-
-+ 登录[Batch Entrez网站](https://www.ncbi.nlm.nih.gov/sites/batchentrez),将准备好的登录号文件上传至该网址，点击Retrive
-
-![](./IMG/batch.png)
-
-+ 跳转到统计界面，共搜索到647条序列，点击UID
-
-![](./IMG/UID.png)
-
-+ 在新跳转出来的界面中点击Download Assemblies,选择下载的格式后下载
-
-![](./IMG/download.png)
-
->**Refseq与Genbank数据的区别**
->
->Genbank是一个开放的数据库，对每个基因都含有许多序列。很多研究者或者公司都可以自己提交序列，另外这个数据库每天都要和EMBL和DDBJ交换数据。Genbank的数据可能重复或者不准。
->而RefSeq数据库被设计成每个人类位点挑出一个代表序列来减少重复，是NCBI提供的校正的序列数据和相关的信息。数据库包括构建的基因组contig、mRNA、蛋白和整个染色体。refseq序列是NCBI筛选过的非冗余数据库，一般可信度比较高。
-
-+ 将下载下来的文件存入genome文件夹并解压缩,重命名为pa_genomes。根据repote.txt可知，一些序列可能存在问题而被舍弃
-
-### 1.2 I.1脂肪酶及其分子伴侣序列数据（目标序列）
-
-+ 建立文件夹用来存放目标序列
-
-```bash
-mkdir -p /mnt/d/project/Evolution/lipase
-
-cd /mnt/d/project/Evolution/lipase
-```
-+ 根据文章提供的参考文献，获取目标序列的登录号
-
-![](./IMG/I.1.png)
-
-## 1. 数据下载
-### 1.1 基因组数据
 + nwr 下载
 ```bash
 #1. brew安装
@@ -201,6 +150,110 @@ EOF
 popd
 ```
 
++ 利用数据库检索假单胞菌菌株
+```bash
+mkdir -p /mnt/d/project/Evolution/genome
+cd /mnt/d/project/Evolution/genome
+
+#构建假单胞菌属菌株列表
+echo "
+    SELECT
+        organism_name || ' ' || assembly_accession AS name,
+        species, genus, ftp_path, assembly_level
+    FROM ar
+    WHERE 1=1
+        AND genus IN ('Pseudomonas')
+        AND species NOT LIKE '% sp.%'
+        AND organism_name NOT LIKE '% sp.%'
+        AND assembly_level IN ('Complete Genome', 'Chromosome')
+    " |
+    sqlite3 -tabs ~/.nwr/ar_refseq.sqlite |
+    tsv-filter --invert --str-eq 2:"Pseudomonas aeruginosa" --str-eq 5:"Chromosome" \
+    > raw.tsv
+
+#构建outgroups列表
+GENUS=$(
+    nwr member Bacteria -r genus |
+        grep -v -i "Candidatus " |
+        grep -v -i "candidate " |
+        sed '1d' |
+        cut -f 1 |
+        tr "\n" "," |
+        sed 's/,$/\)/' |
+        sed 's/^/\(/'
+)
+
+echo "
+.headers ON
+
+    SELECT
+        *
+    FROM ar
+    WHERE 1=1
+        AND genus_id IN $GENUS
+        AND refseq_category IN ('reference genome')
+    " |
+    sqlite3 -tabs ~/.nwr/ar_refseq.sqlite \
+    > reference.tsv
+
+#根据文献内容，只保留Bacillus subtilis subsp. subtilis str. 168作为外群
+cat reference.tsv | 
+tsv-filter -H --eq tax_id:224308 > reference_pass.tsv 
+
+#合并假单胞菌和外群
+cat reference_pass.tsv |
+    tsv-select -H -f organism_name,species,genus,ftp_path,assembly_level \
+    >> raw.tsv
+
+cat raw.tsv |
+    grep -v '^#' |
+    tsv-uniq |
+    perl ~/Scripts/withncbi/taxon/abbr_name.pl -c "1,2,3" -s '\t' -m 3 --shortsub |
+    (echo -e '#name\tftp_path\torganism\tassembly_level' && cat ) |
+    perl -nl -a -F"," -e '
+        BEGIN{my %seen};
+        /^#/ and print and next;
+        /^organism_name/i and next;
+        $seen{$F[5]}++;
+        $seen{$F[5]} > 1 and next;
+        printf qq{%s\t%s\t%s\t%s\n}, $F[5], $F[3], $F[1], $F[4];
+        ' |
+    keep-header -- sort -k3,3 -k1,1 \
+    > Pseudomonas.assembly.tsv  #重新命名
+
+#去除重复
+cat Pseudomonas.assembly.tsv |
+    tsv-uniq -f 1 --repeated
+```
++ 下载
+```bash
+perl ~/Scripts/withncbi/taxon/assembly_prep.pl \
+    -f ./Pseudomonas.assembly.tsv \
+    -o ASSEMBLY
+    
+# Remove dirs not in the list
+find ASSEMBLY -maxdepth 1 -mindepth 1 -type d |
+    tr "/" "\t" |
+    cut -f 2 |
+    tsv-join --exclude -k 1 -f ASSEMBLY/rsync.tsv -d 1 |
+    parallel --no-run-if-empty --linebuffer -k -j 1 '
+        echo Remove {}
+        rm -fr ASSEMBLY/{}
+    '
+    
+bash ASSEMBLY/Pseudomonas.assembly.rsync.sh
+bash ASSEMBLY/Pseudomonas.assembly.collect.sh
+
+#检验是否下载完全 md5
+cat ASSEMBLY/rsync.tsv |
+    tsv-select -f 1 |
+    parallel -j 4 --keep-order '
+        echo "==> {}"
+        cd ASSEMBLY/{}
+        md5sum --check md5checksums.txt
+    ' |
+    grep -v ": OK"
+```
 
 ## 2. 检索不同假单胞菌中I.1脂肪酶的数量
 
