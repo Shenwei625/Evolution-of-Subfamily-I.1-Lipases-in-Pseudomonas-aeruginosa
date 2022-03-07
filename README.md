@@ -302,14 +302,19 @@ blastp -help
 
 ### 2.2 检索
 ```bash
+cd genome
+#将所有的序列合并
+find ../genome/ASSEMBLY -maxdepth 2 -name "*_genomic.fna.gz" |
+   grep -v "_from_" |
+   xargs gzip -dcf > genome.fa
+cat genome.fa | wc -l  #存在一些质粒的序列，大于实际菌株数量
+cat genome.fa | grep ">" | grep -v "plasmid" > raw.lst
+cat raw.lst | grep -v "NZ_CCSF01000001.1" > strains_raw.lst #序列名称太长，影响后续phylip建树
+cat strains_raw.lst | cut -d " " -f 1 | cut -d ">" -f 2 > strains.lst
+faops some genome.fa strains.lst genome_pass.fa
+
 mkdir -p /mnt/d/project/Evolution/blast
 cd /mnt/d/project/Evolution/blast
-
-#将所有的序列合并
-gzip -dcf ../genome/pa_genomes/*.fna.gz > ../genome/pa_genomes.fa
-cat ../genoma/pa_genomes.fa |
-  grep ">" |
-  wc -l
 
 #构建数据库
 makeblastdb -in ../genome/pa_genomes.fa -dbtype nucl -parse_seqids -out ./index
@@ -414,7 +419,7 @@ mkdir /mnt/d/project/Evolution/grouping
 cd /mnt/d/project/Evolution/grouping
 
 #make sketch
-cat ../genome/pa_genomes.fa |
+cat ../genome/genome_pass.fa |
   mash sketch -k 16 -s 400 -i -p 8 - -o pa_genomes.k16s400.msh
 
 #计算距离
