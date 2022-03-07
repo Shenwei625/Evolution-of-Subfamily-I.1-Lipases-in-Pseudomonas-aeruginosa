@@ -428,9 +428,8 @@ done
 ```
 将label.txt文件拖动到进化树上或者在构建进化树的时候上传label.txt文件，即可对进化树进行修饰
 
-![](./IMG/ITOL_c.png)
+![](./IMG/ITOL_L.png)
 
-有些label存在却显示无法查找？
 
 ## 3. 检索不同假单胞菌中I.1脂肪酶的数量
 ### 3.1 BLAST下载
