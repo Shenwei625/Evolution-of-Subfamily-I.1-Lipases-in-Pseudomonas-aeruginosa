@@ -474,11 +474,17 @@ source ~/.bashrc
 #检验是否安装成功
 blastp -help
 ````
+>**faa文件简介**
+>
+>.faa = FASTA Amino Acid file 全部蛋白序列文件，每条序列的第一行是由>开头的任意文字说明。用于序列标记，最好每条序列的标识具有唯一性，一般会用空格把头信息分为两个部分：第一部分是序列名字，它和大于号（>）紧接在一起；第二部分是注释信息，这个可以没有。
+>
+>从第二行开始为序列本身，只允许使用既定的核苷酸或氨基酸编码符号，其中核苷酸大小写均可，氨基酸只能大写。
 
 ### 3.2 检索
 ```bash
 mkdir -p /mnt/d/project/Evolution/blast
 cd /mnt/d/project/Evolution/blast
+cp ../genome/genome_pass.fa ./
 
 #构建数据库
 makeblastdb -in ../genome/pa_genomes.fa -dbtype nucl -parse_seqids -out ./index
@@ -758,3 +764,4 @@ cd-hit --help
 + [iqtree2：新模型高效构建系统发育树](https://zhuanlan.zhihu.com/p/164473497)
 + [使用IQ-TREE构建系统进化树](https://www.jianshu.com/p/f830282866cd)
 + [使用SignalP对蛋白序列进行信号肽预测](http://www.chenlianfu.com/?p=2746)
++ [NCBI上基因组文件格式及解释](https://www.jianshu.com/p/2e3c9b8de625)
