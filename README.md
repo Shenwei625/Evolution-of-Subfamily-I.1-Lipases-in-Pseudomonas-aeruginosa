@@ -280,7 +280,9 @@ find ../genome/ASSEMBLY -maxdepth 2 -name "*_genomic.fna.gz" |
    xargs gzip -dcf > genome.fa
 cat genome.fa | wc -l  #存在一些质粒的序列，大于实际菌株数量
 cat genome.fa | grep ">" | grep -v "plasmid" > raw.lst
-cat raw.lst | grep -v "NZ_CCSF01000001.1" > strains_raw.lst #序列名称太长，影响后续phylip建树
+cat raw.lst | grep -v "NZ_CCSF01000001.1" |
+    grep -v "NZ_CP044085.1" | grep -v "NZ_CP077094.1" > strains_raw.lst 
+#NZ_CCSF01000001.1序列名称太长，影响后续phylip建树,NZ_CP044085.1(Pseudomonas luteola)与NZ_CP077094.1（Pseudomonas promysalinigenes）相对于其余株系基因距离太远
 cat strains_raw.lst | cut -d " " -f 1 | cut -d ">" -f 2 > strains.lst
 faops some genome.fa strains.lst genome_pass.fa
 
@@ -353,7 +355,7 @@ Human       1.5905  1.4629  0.5583  0.4710  0.3083  0.2692  0.0000
 cat dist.txt | sed -e "1d" > dist2.txt
 
 #利用perl的脚本（ten.pl）修改序列名称，删去序列名称小数点后面的数字（版本号）以及NZ后的下划线
-perl script/ten.pl
+perl ../script/ten.pl
 
 #将序列数量添加到第一行
 sed "1 i$(cat dist2.txt | wc -l)" -i format.txt
@@ -391,12 +393,43 @@ cp outtree outfile /mnt/d/project/Evolution/grouping
 
 + 点击outtree打开并完善发育树
 
-![](./IMG/itol_raw.png)
+![](./IMG/ITOL.png)
 
-观察到NZCP044085（Pseudomonas luteola）与NZCP077094（Pseudomonas promysalinigenes）遗传距离相对其他菌株较远，点击tree structure和delete leaf将其删去
++ 为不同物种的label上色（铜绿假单胞菌红色，丁香假单胞菌棕色，恶臭假单胞菌绿色），阅读iTOL的HELP文件了解
 
-![](./IMG/itol.png)
+![](./IMG/HELP.png)
 
+```bash
+mkdir /mnt/d/project/Evolution/iTOL
+cd /mnt/d/project/Evolution/iTOL
+cp ../genome/strains_raw.lst ./
+
+perl ../script/name.pl #修改序列名称，使其和进化树label一致
+cat name.lst | grep "Pseudomonas aeruginosa" > Pseudomonas_aeruginosa.lst #铜绿假单胞菌
+cat name.lst | grep "Pseudomonas syringae" > Pseudomonas_syringae.lst #丁香假单胞菌
+cat name.lst | grep "Pseudomonas putida" > Pseudomonas_putida.lst #恶臭假单胞菌
+
+PSA=$(cat Pseudomonas_aeruginosa.lst | cut -d " " -f 1 | cut -d ">" -f 2)
+#echo $PSA
+PSS=$(cat Pseudomonas_syringae.lst | cut -d " " -f 1 | cut -d ">" -f 2)
+PSP=$(cat Pseudomonas_putida.lst | cut -d " " -f 1 | cut -d ">" -f 2)
+
+echo -e "TREE_COLORS\nSEPARATOR SPACE\nDATA" > label.txt
+for A in $PSA; do
+    echo -e "$A label #f44336" >> label.txt
+done
+for S in $PSS; do 
+    echo -e "$S label #7f6000" >> label.txt
+done
+for P in $PSP; do 
+    echo -e "$P label #8fce00" >> label.txt
+done
+```
+将label.txt文件拖动到进化树上或者在构建进化树的时候上传label.txt文件，即可对进化树进行修饰
+
+![](./IMG/ITOL_c.png)
+
+有些label存在却显示无法查找？
 
 ## 3. 检索不同假单胞菌中I.1脂肪酶的数量
 ### 3.1 BLAST下载
