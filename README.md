@@ -378,6 +378,7 @@ clique            dnainvar  dollop    fitch     font6       mix             penn
 consense          dnaml     dolmove   font1     format.txt  move            proml     retree
 #这里多了一个outfile和一个outtree输出文件
 
+sed -i s/_//g ./outtree #phylip在一些序列名称后面添加了下划线
 #将这两个文件存放到grouping文件夹方便查看
 cp outtree outfile /mnt/d/project/Evolution/grouping
 ```
@@ -498,19 +499,23 @@ cd /mnt/d/project/Evolution/blast
 cp ../genome/genome_pass.fa ./
 
 #构建数据库
-makeblastdb -in ../genome/pa_genomes.fa -dbtype nucl -parse_seqids -out ./index
+makeblastdb -in ./lipase.fa -dbtype nucl -parse_seqids -out ./index
 # -in 构建数据库所用的序列文件
 # -dbtype 数据库类型，构建的数据库是核苷酸数据库时，dbtype设置为nucl，数据库是氨基酸数据库时，dbtype设置为prot。
 # -out 数据库名称
 # -parse_seqids 为FASTA输入解析seqid
 
 #blastn检索
-blastn -query ../lipase/target.fa -db ./index -evalue 1e-6 -outfmt 6 -num_threads 6 -out out_file
+blastn -query ../genome/genome_pass.fa \
+    -db ./index -qcov_hsp_perc 60 \
+    -perc_identity 35 \
+    -outfmt 6 \ 
+    -out out_file
 #-query 进行检索的序列
 #-db 使用的数据库
-#-evalue 设置输出结果中的e-value阈值。e-value低于1e-5就可认为序列具有较高的同源性
+#-qcov_hsp_perc Percent query coverage per hsp
+#-perc_identity Percent identity
 #-outfmt 输出文件的格式，详细见下表
-#-num_threads 线程数
 #-out 输出文件名称
 ```
 | 数值 | 代表含义 |
