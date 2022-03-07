@@ -254,150 +254,8 @@ cat ASSEMBLY/rsync.tsv |
     ' |
     grep -v ": OK"
 ```
-
-## 2. 检索不同假单胞菌中I.1脂肪酶的数量
-
-### 2.1 BLAST下载
-
-+ 简介
-
-[BLAST](https://www.ncbi.nlm.nih.gov/books/NBK279690/)，全称Basic Local Alignment Search Tool，即"基于局部比对算法的搜索工具"，由Altschul等人于1990年发布。BLAST能够实现比较两段核酸或者蛋白序列之间的同源性的功能，它能够快速的找到两段序列之间的同源序列并对比对区域进行打分以确定同源性的高低。
-
-BLAST的运行方式是先用目标序列建数据库（这种数据库称为database，里面的每一条序列称为subject），然后用待查的序列（称为query）在database中搜索，每一条query与database中的每一条subject都要进行双序列比对，从而得出全部比对结果。
-
-BLAST是一个集成的程序包，可以实现五种可能的序列比对方式：
-
-```
-blastp：蛋白序列与蛋白库做比对，直接比对蛋白序列的同源性。
-
-blastx：核酸序列对蛋白库的比对，先将核酸序列翻译成蛋白序列（根据相位可以翻译为6种可能的蛋白序列），然后再与蛋白库做比对。
-
-blastn：核酸序列对核酸库的比对，直接比较核酸序列的同源性。
-
-tblastn：蛋白序列对核酸库的比对，将库中的核酸翻译成蛋白序列，然后进行比对。
-
-tblastx：核酸序列对核酸库在蛋白级别的比对，将库和待查序列都翻译成蛋白序列，然后对蛋白序列进行比对。
-```
-+ 下载
-```bash
-#新建文件夹用来存放生信工具
-mkdir -p ~/biosoft 
-
-#根据自己的系统，下载blast软件包，这里选用linux的2.12.0版本
-wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.12.0+-x64-linux.tar.gz
-
-#解压
-tar -xzvf ncbi-blast-2.12.0+-x64-linux.tar.gz
-
-#配置环境变量
-cd ncbi-blast-2.12.0+
-export PATH="$(pwd):$PATH"
-
-#刷新.bashrc文件，使环境变量生效
-source ~/.bashrc
-
-#检验是否安装成功
-blastp -help
-````
-
-### 2.2 检索
-```bash
-cd genome
-#将所有的序列合并
-find ../genome/ASSEMBLY -maxdepth 2 -name "*_genomic.fna.gz" |
-   grep -v "_from_" |
-   xargs gzip -dcf > genome.fa
-cat genome.fa | wc -l  #存在一些质粒的序列，大于实际菌株数量
-cat genome.fa | grep ">" | grep -v "plasmid" > raw.lst
-cat raw.lst | grep -v "NZ_CCSF01000001.1" > strains_raw.lst #序列名称太长，影响后续phylip建树
-cat strains_raw.lst | cut -d " " -f 1 | cut -d ">" -f 2 > strains.lst
-faops some genome.fa strains.lst genome_pass.fa
-
-mkdir -p /mnt/d/project/Evolution/blast
-cd /mnt/d/project/Evolution/blast
-
-#构建数据库
-makeblastdb -in ../genome/pa_genomes.fa -dbtype nucl -parse_seqids -out ./index
-# -in 构建数据库所用的序列文件
-# -dbtype 数据库类型，构建的数据库是核苷酸数据库时，dbtype设置为nucl，数据库是氨基酸数据库时，dbtype设置为prot。
-# -out 数据库名称
-# -parse_seqids 为FASTA输入解析seqid
-
-#blastn检索
-blastn -query ../lipase/target.fa -db ./index -evalue 1e-6 -outfmt 6 -num_threads 6 -out out_file
-#-query 进行检索的序列
-#-db 使用的数据库
-#-evalue 设置输出结果中的e-value阈值。e-value低于1e-5就可认为序列具有较高的同源性
-#-outfmt 输出文件的格式，详细见下表
-#-num_threads 线程数
-#-out 输出文件名称
-```
-| 数值 | 代表含义 |
-| --- | ------------ |
-| 0 | pairwise |
-| 1 | query-anchored showing identities |
-| 2 | query-anchored no identities |
-| 3 | flat query-anchored, show identities |
-| 4 | flat query-anchored, no identities |
-| 5 | query-anchored no identities and blunt ends |
-| 6 | flat query-anchored, no identities and blunt ends |
-| 7 | XML Blast output |
-| 8 | tabular |
-| 9 | tabular with comment lines |
-| 10 | ASN, text |
-| 11 | ASN, binary Integer |
-
-### 2.3 结果分析
-```bash
-head -n 3 out_file
-lcl|AF031226.1_gene_1   CP027477.1      96.742  890     27      2       1       889     662634  663522 0.0      1482
-lcl|AF031226.1_gene_1   CP038207.1      92.705  891     65      0       1       891     1204976 12058660.0      1286
-lcl|AF031226.1_gene_1   CP038438.1      92.881  885     62      1       1       884     663883  664767 0.0      1284
-```
-第1列：输入序列的名称
-
-第2列：比对到的目标序列名称
-
-第3列：序列相似度
-
-第4列：比对的有效长度
-
-第5列：错配数
-
-第6列：gap数
-
-第7-8列：输入序列比对上的起始和终止位置
-
-第9-10列：比对到目标序列的起始和终止位置
-
-第11列：e-value
-
-第12列：比对得分
-
-+ 统计
-
-因为我们关心的是每个菌株中I.1脂肪酶的数量，即上文结论中输入序列比对到的次数，这里需要进行统计
-```
-#提取第一列
-cat out_file |
-  cut -f 2 > statistic.txt
-
-#利用perl的脚本（script文件夹中）进行统计
-perl statistics.pl
-
-head -n 5 RESULT.txt
-AE004091.2      2
-AE016853.1      1
-AP012280.1      2
-AP013070.1      1
-AP014522.1      1
-AP014622.1      2
-```
-
-
-
-## 3. 物种树的构建
-### 3.1 MASH下载
+## 2. 物种树的构建
+### 2.1 MASH下载
 + 简介
 
 [Mash](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0997-x)发表在2016年6月Genome Biology的上面，它借用MinHash这样一个搜索引擎常用的判断重复文档的技术而实现，另外增加了计算两两之间突变距离和P值显著性检验。Mash通过把大的序列集合简化成小的sketch，从而快速计算它们之间的广义突变距离（global mutation distances，可以近似地理解为『进化距离』，越大表示两者之间亲缘关系越近，如果是0，表示同一物种）。
@@ -413,8 +271,19 @@ brew install mash
 
 mash --help
 ```
-### 3.2 获得距离矩阵
+### 2.2 获得距离矩阵
 ```bash
+cd genome
+#将所有的序列合并
+find ../genome/ASSEMBLY -maxdepth 2 -name "*_genomic.fna.gz" |
+   grep -v "_from_" |
+   xargs gzip -dcf > genome.fa
+cat genome.fa | wc -l  #存在一些质粒的序列，大于实际菌株数量
+cat genome.fa | grep ">" | grep -v "plasmid" > raw.lst
+cat raw.lst | grep -v "NZ_CCSF01000001.1" > strains_raw.lst #序列名称太长，影响后续phylip建树
+cat strains_raw.lst | cut -d " " -f 1 | cut -d ">" -f 2 > strains.lst
+faops some genome.fa strains.lst genome_pass.fa
+
 mkdir /mnt/d/project/Evolution/grouping
 cd /mnt/d/project/Evolution/grouping
 
@@ -426,7 +295,7 @@ cat ../genome/genome_pass.fa |
 mash dist -t  -p 6 pa_genomes.k16s400.msh pa_genomes.k16s400.msh > dist.txt
 ```
 
-### 3.3 PHYLIP下载
+### 2.3 PHYLIP下载
 + 简介
 
 [PHYLIP](https://evolution.gs.washington.edu/phylip.html)，即系统发育推理包（the PHYLogeny Inference Package），是用于推断系统发育（进化树）的程序包。它可以通过简约性、兼容性、距离矩阵方法和似然性来推断系统发育。它还可以计算共识树、计算树之间的距离、绘制树、通过自举或折刀重新采样数据集、编辑树以及计算距离矩阵。它可以处理核苷酸序列、蛋白质序列、基因频率、限制性位点、限制性片段、距离、离散字符和连续字符等数据。
@@ -463,7 +332,7 @@ make install
 ```
 打开phylip文件夹下的phylip.html可以查看exe文件夹中每个应用的作用
 
-### 3.4 使用PHYLIP中的neighbor绘制发育树
+### 2.4 使用PHYLIP中的neighbor绘制发育树
 ![](./IMG/neighbor.png)
 
 + PHYLIP格式说明
@@ -511,7 +380,7 @@ consense          dnaml     dolmove   font1     format.txt  move            prom
 cp outtree outfile /mnt/d/project/Evolution/grouping
 ```
 
-### 3.5 iTOL美化进化树
+### 2.5 iTOL美化进化树
 + 进入[iTOL(Interactive Tree of Life)](https://itol.embl.de/)官网并且完成注册
 
 ![](./IMG/iTOL1.png)
@@ -522,6 +391,139 @@ cp outtree outfile /mnt/d/project/Evolution/grouping
 
 + 点击outtree打开并完善发育树
 
+![](./IMG/itol_raw.png)
+
+观察到NZCP044085（Pseudomonas luteola）与NZCP077094（Pseudomonas promysalinigenes）遗传距离相对其他菌株较远，点击tree structure和delete leaf将其删去
+
+![](./IMG/itol.png)
+
+
+## 3. 检索不同假单胞菌中I.1脂肪酶的数量
+### 3.1 BLAST下载
+
++ 简介
+
+[BLAST](https://www.ncbi.nlm.nih.gov/books/NBK279690/)，全称Basic Local Alignment Search Tool，即"基于局部比对算法的搜索工具"，由Altschul等人于1990年发布。BLAST能够实现比较两段核酸或者蛋白序列之间的同源性的功能，它能够快速的找到两段序列之间的同源序列并对比对区域进行打分以确定同源性的高低。
+
+BLAST的运行方式是先用目标序列建数据库（这种数据库称为database，里面的每一条序列称为subject），然后用待查的序列（称为query）在database中搜索，每一条query与database中的每一条subject都要进行双序列比对，从而得出全部比对结果。
+
+BLAST是一个集成的程序包，可以实现五种可能的序列比对方式：
+
+```
+blastp：蛋白序列与蛋白库做比对，直接比对蛋白序列的同源性。
+
+blastx：核酸序列对蛋白库的比对，先将核酸序列翻译成蛋白序列（根据相位可以翻译为6种可能的蛋白序列），然后再与蛋白库做比对。
+
+blastn：核酸序列对核酸库的比对，直接比较核酸序列的同源性。
+
+tblastn：蛋白序列对核酸库的比对，将库中的核酸翻译成蛋白序列，然后进行比对。
+
+tblastx：核酸序列对核酸库在蛋白级别的比对，将库和待查序列都翻译成蛋白序列，然后对蛋白序列进行比对。
+```
++ 下载
+```bash
+#新建文件夹用来存放生信工具
+mkdir -p ~/biosoft 
+
+#根据自己的系统，下载blast软件包，这里选用linux的2.12.0版本
+wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.12.0+-x64-linux.tar.gz
+
+#解压
+tar -xzvf ncbi-blast-2.12.0+-x64-linux.tar.gz
+
+#配置环境变量
+cd ncbi-blast-2.12.0+
+export PATH="$(pwd):$PATH"
+
+#刷新.bashrc文件，使环境变量生效
+source ~/.bashrc
+
+#检验是否安装成功
+blastp -help
+````
+
+### 3.2 检索
+```bash
+mkdir -p /mnt/d/project/Evolution/blast
+cd /mnt/d/project/Evolution/blast
+
+#构建数据库
+makeblastdb -in ../genome/pa_genomes.fa -dbtype nucl -parse_seqids -out ./index
+# -in 构建数据库所用的序列文件
+# -dbtype 数据库类型，构建的数据库是核苷酸数据库时，dbtype设置为nucl，数据库是氨基酸数据库时，dbtype设置为prot。
+# -out 数据库名称
+# -parse_seqids 为FASTA输入解析seqid
+
+#blastn检索
+blastn -query ../lipase/target.fa -db ./index -evalue 1e-6 -outfmt 6 -num_threads 6 -out out_file
+#-query 进行检索的序列
+#-db 使用的数据库
+#-evalue 设置输出结果中的e-value阈值。e-value低于1e-5就可认为序列具有较高的同源性
+#-outfmt 输出文件的格式，详细见下表
+#-num_threads 线程数
+#-out 输出文件名称
+```
+| 数值 | 代表含义 |
+| --- | ------------ |
+| 0 | pairwise |
+| 1 | query-anchored showing identities |
+| 2 | query-anchored no identities |
+| 3 | flat query-anchored, show identities |
+| 4 | flat query-anchored, no identities |
+| 5 | query-anchored no identities and blunt ends |
+| 6 | flat query-anchored, no identities and blunt ends |
+| 7 | XML Blast output |
+| 8 | tabular |
+| 9 | tabular with comment lines |
+| 10 | ASN, text |
+| 11 | ASN, binary Integer |
+
+### 3.3 结果分析
+```bash
+head -n 3 out_file
+lcl|AF031226.1_gene_1   CP027477.1      96.742  890     27      2       1       889     662634  663522 0.0      1482
+lcl|AF031226.1_gene_1   CP038207.1      92.705  891     65      0       1       891     1204976 12058660.0      1286
+lcl|AF031226.1_gene_1   CP038438.1      92.881  885     62      1       1       884     663883  664767 0.0      1284
+```
+第1列：输入序列的名称
+
+第2列：比对到的目标序列名称
+
+第3列：序列相似度
+
+第4列：比对的有效长度
+
+第5列：错配数
+
+第6列：gap数
+
+第7-8列：输入序列比对上的起始和终止位置
+
+第9-10列：比对到目标序列的起始和终止位置
+
+第11列：e-value
+
+第12列：比对得分
+
++ 统计
+
+因为我们关心的是每个菌株中I.1脂肪酶的数量，即上文结论中输入序列比对到的次数，这里需要进行统计
+```
+#提取第一列
+cat out_file |
+  cut -f 2 > statistic.txt
+
+#利用perl的脚本（script文件夹中）进行统计
+perl statistics.pl
+
+head -n 5 RESULT.txt
+AE004091.2      2
+AE016853.1      1
+AP012280.1      2
+AP013070.1      1
+AP014522.1      1
+AP014622.1      2
+```
 
 ## 4. 蛋白树的构建
 ### 4.1 MUSCLE下载
