@@ -590,7 +590,8 @@ for L in $LIPASE; do
 done
 
 #统计每个序列的蛋白数量
-cat pass.txt | cut -f 1,2 | sort > pass1.txt
+cat pass.txt | cut -f 1,2 | sort > result_raw.txt
+cat result_raw.txt | cut -f 1 | uniq -c > result.txt
 ```
 
 ## 4. 蛋白树的构建
