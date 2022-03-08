@@ -506,11 +506,7 @@ makeblastdb -in ./lipase.fa -dbtype nucl -parse_seqids -out ./index
 # -parse_seqids 为FASTA输入解析seqid
 
 #blastn检索
-blastn -query ../genome/genome_pass.fa \
-    -db ./index -qcov_hsp_perc 60 \
-    -perc_identity 35 \
-    -outfmt 6 \ 
-    -out out_file
+blastn -query ../genome/genome_pass.fa -db ./index -qcov_hsp_perc 60 -perc_identity 35 -outfmt 6 -out out_file
 #-query 进行检索的序列
 #-db 使用的数据库
 #-qcov_hsp_perc Percent query coverage per hsp
