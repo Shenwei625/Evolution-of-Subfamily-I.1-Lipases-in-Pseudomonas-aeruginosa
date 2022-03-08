@@ -496,7 +496,6 @@ YNSTDLIVLKNTDTTLDELLNNNQLLF
 ```bash
 mkdir -p /mnt/d/project/Evolution/blast
 cd /mnt/d/project/Evolution/blast
-cp ../genome/genome_pass.fa ./
 
 #构建数据库
 makeblastdb -in ./lipase.fa -dbtype nucl -parse_seqids -out ./index
@@ -506,11 +505,11 @@ makeblastdb -in ./lipase.fa -dbtype nucl -parse_seqids -out ./index
 # -parse_seqids 为FASTA输入解析seqid
 
 #blastn检索
-blastn -query ../genome/genome_pass.fa -db ./index -qcov_hsp_perc 60 -perc_identity 35 -outfmt 6 -out out_file
+blastn -query ../genome/genome_pass.fa -db ./index -perc_identity 35 -outfmt 6 -num_threads 6 -out out_file
 #-query 进行检索的序列
 #-db 使用的数据库
-#-qcov_hsp_perc Percent query coverage per hsp
-#-perc_identity Percent identity
+#-perc_identity 相似度
+#-num_threads 线程数
 #-outfmt 输出文件的格式，详细见下表
 #-out 输出文件名称
 ```
@@ -532,9 +531,9 @@ blastn -query ../genome/genome_pass.fa -db ./index -qcov_hsp_perc 60 -perc_ident
 ### 3.3 结果分析
 ```bash
 head -n 3 out_file
-lcl|AF031226.1_gene_1   CP027477.1      96.742  890     27      2       1       889     662634  663522 0.0      1482
-lcl|AF031226.1_gene_1   CP038207.1      92.705  891     65      0       1       891     1204976 12058660.0      1286
-lcl|AF031226.1_gene_1   CP038438.1      92.881  885     62      1       1       884     663883  664767 0.0      1284
+NC_020912.1	D50587.1	99.506	1012	5	0	2265941	2266952	1020	9	0.0	1842
+NC_020912.1	U75975.1	99.785	930	2	0	5554067	5554996	930	1	0.0	1707
+NC_020912.1	AF031226.1	77.483	866	172	20	4701328	4702185	930	80	7.31e-140	497
 ```
 第1列：输入序列的名称
 
@@ -558,22 +557,40 @@ lcl|AF031226.1_gene_1   CP038438.1      92.881  885     62      1       1       
 
 + 统计
 
-因为我们关心的是每个菌株中I.1脂肪酶的数量，即上文结论中输入序列比对到的次数，这里需要进行统计
+blastn后面加上-qcov_hsp_perc 60 参数时最后结果文件没有内容？？？（手动筛选）
 ```
-#提取第一列
-cat out_file |
-  cut -f 2 > statistic.txt
+#筛选覆盖度大于60% 
+faops size lipase.fa
+#D50587.1        1020  合格：612   
+#AF031226.1      2382  合格：1429
+#U75975.1        930   合格：558
+#X14033.1        1178  合格：706
+#U88907.1        3130  合格：1878
 
-#利用perl的脚本（script文件夹中）进行统计
-perl statistics.pl
+LIPASE=$(faops size lipase.fa | cut -f 1)
+for L in $LIPASE; do
+    cat out_file | grep "$L" > $L.txt
+done
+for L in $LIPASE; do
+    if [ "$L" = "D50587.1" ]; then
+        cat $L.txt | tsv-filter --gt 4:612 >> pass.txt
+    fi
+    if [ "$L" = "AF031226.1" ]; then
+        cat $L.txt | tsv-filter --gt 4:1429 >> pass.txt
+    fi
+    if [ "$L" = "U75975.1" ]; then
+        cat $L.txt | tsv-filter --gt 4:558 >> pass.txt
+    fi
+    if [ "$L" = "X14033.1" ]; then
+        cat $L.txt | tsv-filter --gt 4:706 >> pass.txt
+    fi
+    if [ "$L" = "U88907.1" ]; then
+        cat $L.txt | tsv-filter --gt 4:1878 >> pass.txt
+    fi
+done
 
-head -n 5 RESULT.txt
-AE004091.2      2
-AE016853.1      1
-AP012280.1      2
-AP013070.1      1
-AP014522.1      1
-AP014622.1      2
+#统计每个序列的蛋白数量
+cat pass.txt | cut -f 1,2 | sort > pass1.txt
 ```
 
 ## 4. 蛋白树的构建
