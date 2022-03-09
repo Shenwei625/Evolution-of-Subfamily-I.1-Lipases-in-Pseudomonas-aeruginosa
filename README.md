@@ -624,21 +624,24 @@ sed -i 's/\.//' ../RESULT.txt
 faops size ../../genome/genome_pass.fa > total.txt
 sed -i 's/_//' total.txt
 sed -i 's/\.//' total.txt
-cat ../RESULT.txt | tsv-filter --gt 2:2 > mul.txt
-cat ../RESULT.txt | tsv-filter --gt 2:1 --le 2:2 > 2.txt
-cat ../RESULT.txt | tsv-filter --gt 2:0 --le 2:1 > 1.txt
+cat ../RESULT.txt | tsv-filter --gt 2:2 | cut -f 1 > mul.txt
+cat ../RESULT.txt | tsv-filter --gt 2:1 --le 2:2 | cut -f 1 > 2.txt
+cat ../RESULT.txt | tsv-filter --gt 2:0 --le 2:1 | cut -f 1 > 1.txt
 
 cat ../RESULT.txt | cut -f 1 >> total.txt
 cat total.txt | cut -f 1 | sort > statistic.txt
 perl ../../script/statistics.pl
 cat RESULT.txt | tsv-filter --lt 2:2 | cut -f 1 > 0.txt
+#920
+cat ../../genome/genome_pass | grep ">" | wc -l
+cat mul.txt 2.txt 1.txt 0.txt | wc -l
 
 # 构建修饰文件
 L0=$(cat 0.txt)
 L1=$(cat 1.txt)
 L2=$(cat 2.txt)
 LM=$(cat mul.txt)
-echo -e "DATASET_COLORSTRIP\nSEPARATOR SPACE\nDATASET_LABEL label1\nCOLOR #ff0000\nCOLOR_BRANCHES 0\nDATA\n"
+echo -e "DATASET_COLORSTRIP\nSEPARATOR SPACE\nDATASET_LABEL label1\nCOLOR #ff0000\nCOLOR_BRANCHES 0\nDATA" >> strips.txt
 for A in $L0;do
     echo -e "$A #ffffff nolipase" >> strips.txt
 done
