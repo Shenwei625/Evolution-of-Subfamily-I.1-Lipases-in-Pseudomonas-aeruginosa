@@ -696,7 +696,7 @@ mkdir /mnt/d/project/Evolution/protine
 cd /mnt/d/project/Evolution/protine
 
 cp ../blast/pass.txt ./
-perl region.pl  #script文件夹
+perl ../script/region.pl  #script文件夹
 ```
 + 提取
 ```bash
