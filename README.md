@@ -566,6 +566,9 @@ faops size lipase.fa
 #U75975.1        930   合格：558
 #X14033.1        1178  合格：706
 #U88907.1        3130  合格：1878
+#X80800.1        3239  合格：1943
+#U33845.1        2027  合格：1216
+
 
 LIPASE=$(faops size lipase.fa | cut -f 1)
 for L in $LIPASE; do
@@ -586,6 +589,12 @@ for L in $LIPASE; do
     fi
     if [ "$L" = "U88907.1" ]; then
         cat $L.txt | tsv-filter --gt 4:1878 >> pass.txt
+    fi
+    if [ "$L" = "X80800.1" ]; then
+        cat $L.txt | tsv-filter --gt 4:1943 >> pass.txt
+    fi
+    if [ "$L" = "U33845.1" ]; then
+        cat $L.txt | tsv-filter --gt 4:1216 >> pass.txt
     fi
 done
 
