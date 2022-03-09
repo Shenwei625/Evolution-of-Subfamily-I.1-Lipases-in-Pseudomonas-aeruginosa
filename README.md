@@ -674,7 +674,7 @@ muscle --help
 
 #用法：muscle -in seqs.fa -out seqs.afa
 ```
-### 4.2 提取每个菌株中识别到的序列
+### 4.2 提取识别到的编码脂肪酶的序列
 + 利用faops region提取序列
 ```
 #用法
@@ -695,7 +695,7 @@ out.fa == stdout means writing to stdout
 mkdir /mnt/d/project/Evolution/protine
 cd /mnt/d/project/Evolution/protine
 
-cp ../blast/out_file ./
+cp ../blast/pass.txt ./
 perl region.pl  #script文件夹
 ```
 + 提取
