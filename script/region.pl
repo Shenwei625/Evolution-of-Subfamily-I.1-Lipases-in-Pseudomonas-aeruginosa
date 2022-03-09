@@ -1,5 +1,5 @@
 #! usr/bin/perl
-open LIST, '<out_file' or die "Cannot read from out_file:$!";
+open LIST, '<pass.txt' or die "Cannot read from out_file:$!";
 open STDOUT, '>region.txt' or die "Cannot write to region.txt:$!";
 chomp(my @list = <LIST>);
 foreach (@list) {
