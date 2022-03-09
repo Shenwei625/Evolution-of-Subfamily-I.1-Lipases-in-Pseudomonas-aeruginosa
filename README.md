@@ -599,9 +599,61 @@ for L in $LIPASE; do
 done
 
 #统计每个序列的蛋白数量
-cat pass.txt | cut -f 1,2 | sort > result_raw.txt
-cat result_raw.txt | cut -f 1 | uniq -c > result.txt
+cat pass.txt | cut -f 1 | sort > statistic.txt
+perl ../script/statistics.pl
+
+for L in $LIPASE; do
+    rm $L.txt
+done
 ```
++ 将蛋白的数量显示在进化树上，用[colour strips](https://itol.embl.de/help/dataset_color_strip_template.txt)表示
+```bash
+# o lipase：#ffffff(白色)
+# 1 lipase：#bcbcbc(淡灰色)
+# 2 lipase：#444444(深灰色)
+# >2 lipase: #000000(黑色)
+
+mkdir /mnt/d/project/1/blast/iTOL
+cd /mnt/d/project/1/blast/iTOL
+
+#修改序列名称
+sed -i 's/_//' ../RESULT.txt
+sed -i 's/\.//' ../RESULT.txt
+
+#将不同蛋白数量的序列分类
+faops size ../../genome/genome_pass.fa > total.txt
+sed -i 's/_//' total.txt
+sed -i 's/\.//' total.txt
+cat ../RESULT.txt | tsv-filter --gt 2:2 > mul.txt
+cat ../RESULT.txt | tsv-filter --gt 2:1 --le 2:2 > 2.txt
+cat ../RESULT.txt | tsv-filter --gt 2:0 --le 2:1 > 1.txt
+
+cat ../RESULT.txt | cut -f 1 >> total.txt
+cat total.txt | cut -f 1 | sort > statistic.txt
+perl ../../script/statistics.pl
+cat RESULT.txt | tsv-filter --lt 2:2 | cut -f 1 > 0.txt
+
+# 构建修饰文件
+L0=$(cat 0.txt)
+L1=$(cat 1.txt)
+L2=$(cat 2.txt)
+LM=$(cat mul.txt)
+echo -e "DATASET_COLORSTRIP\nSEPARATOR SPACE\nDATASET_LABEL label1\nCOLOR #ff0000\nCOLOR_BRANCHES 0\nDATA\n"
+for A in $L0;do
+    echo -e "$A #ffffff nolipase" >> strips.txt
+done
+for A in $L1;do
+    echo -e "$A #bcbcbc onelipase" >> strips.txt
+done
+for A in $L2;do
+    echo -e "$A #444444 twolipase" >> strips.txt
+done
+for A in $LM;do
+    echo -e "$A #000000 multi_lipase" >> strips.txt
+done
+```
+
+
 
 ## 4. 蛋白树的构建
 ### 4.1 MUSCLE下载
