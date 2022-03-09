@@ -718,7 +718,7 @@ rm protein2.fa
 
 ### 4.3 MUSCLE对比分析
 ```bash
-muscle -in protine.fa -out protine.afa
+muscle -in protein.fa -out protein.afa
 #-in <inputfile>    Input file in FASTA format (default stdin)
 #-out <outputfile>  Output alignment in FASTA format (default stdout)
 ```
@@ -747,14 +747,14 @@ iqtree --help
 ### 4.5 使用IQ-TREE建树
 ```bash
 #使用ModelFinder寻找最佳模型
-iqtree -s protine.afa -m MF -nt 2
+iqtree -s ../protein.afa -m MF -nt 2
 #-s <alignment>       Input alignment in PHYLIP/FASTA/NEXUS/CLUSTAL/MSF format
 #-m MF                Extended model selection with FreeRate heterogeneity
 #-nt <num_threads>    Number of cores/threads or AUTO for automatic detection
-Akaike Information Criterion:           GTR+F+R6
-Corrected Akaike Information Criterion: TIM3+F+R6
-Bayesian Information Criterion:         TIM3+F+G4
-Best-fit model: TIM3+F+G4 chosen according to BIC #这里显示了最佳的模型
+Akaike Information Criterion:           GTR+F+R4
+Corrected Akaike Information Criterion: GTR+F+R4
+Bayesian Information Criterion:         TVM+F+R4
+Best-fit model: TVM+F+R4 chosen according to BIC #这里显示了最佳的模型
 
 #建树
 mkdir tree
