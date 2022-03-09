@@ -654,8 +654,9 @@ for A in $LM;do
     echo -e "$A #000000 multi_lipase" >> strips.txt
 done
 ```
+将strips.txt文件拖动到进化树上
 
-
+![](./IMG/ITOL_S.png)
 
 ## 4. 蛋白树的构建
 ### 4.1 MUSCLE下载
