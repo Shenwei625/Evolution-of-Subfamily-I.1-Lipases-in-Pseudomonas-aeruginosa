@@ -692,15 +692,28 @@ out.fa == stdout means writing to stdout
 
 + 根据blast结果构建region.txt文件
 ```bash
-mkdir /mnt/d/project/Evolution/protine
-cd /mnt/d/project/Evolution/protine
+mkdir /mnt/d/project/Evolution/protein
+cd /mnt/d/project/Evolution/protein
 
 cp ../blast/pass.txt ./
-perl ../script/region.pl  #script文件夹
+perl ../script/region.pl
 ```
 + 提取
 ```bash
-faops region ../genome/pa_genomes.fa region.txt protine.fa
+faops region ../genome/genome_pass.fa region.txt protein.fa
+```
+这里的region.txt中，一个菌株中的不同序列要写成seq_name:begin-end,begin-end的形式，若分成两行则只能提取一个序列  ？？？（多次提取？）
+```bash
+cat region.txt | wc -l #877
+cat protein.fa | grep ">" > first.txt
+wc -l first.txt #485
+
+grep -v -f first.txt region.txt > rest.txt
+wc -l rest.txt #392
+faops region ../genome/genome_pass.fa rest.txt protein2.fa
+cat protein2.fa | grep ">" | wc -l #392
+cat protein2.fa >> protein.fa
+rm protein2.fa
 ```
 
 ### 4.3 MUSCLE对比分析
