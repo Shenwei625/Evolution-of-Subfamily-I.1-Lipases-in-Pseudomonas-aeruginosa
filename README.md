@@ -600,6 +600,9 @@ done
 
 #统计每个序列的蛋白数量
 cat pass.txt | cut -f 1 | sort > statistic.txt
+#修改序列名称
+sed -i 's/_//' statistic.txt
+sed -i 's/\.[0-9]\b//' statistic.txt
 perl ../script/statistics.pl
 
 for L in $LIPASE; do
@@ -616,14 +619,10 @@ done
 mkdir /mnt/d/project/1/blast/iTOL
 cd /mnt/d/project/1/blast/iTOL
 
-#修改序列名称
-sed -i 's/_//' ../RESULT.txt
-sed -i 's/\.//' ../RESULT.txt
-
 #将不同蛋白数量的序列分类
 faops size ../../genome/genome_pass.fa > total.txt
 sed -i 's/_//' total.txt
-sed -i 's/\.//' total.txt
+sed -i 's/\.[0-9]\b//' total.txt
 cat ../RESULT.txt | tsv-filter --gt 2:2 | cut -f 1 > mul.txt
 cat ../RESULT.txt | tsv-filter --gt 2:1 --le 2:2 | cut -f 1 > 2.txt
 cat ../RESULT.txt | tsv-filter --gt 2:0 --le 2:1 | cut -f 1 > 1.txt
