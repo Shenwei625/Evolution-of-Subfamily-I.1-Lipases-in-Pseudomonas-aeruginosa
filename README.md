@@ -766,7 +766,13 @@ iqtree -s protein.afa -m TIM3+F+G4 -bb 1000 -nt AUTO
 #-nt <num_threads>    Number of cores/threads or AUTO for automatic detection
 ```
 ### 4.6 iTOL美化进化树
-+ 参考3.5的内容导入进化树
++ 在iTOL中导入tree/protein.afa.treefile文件
+
+![](./IMG/protein.png)
+
++ 修饰
+
+
 
 ### 4.7 SignalP下载（预测信号肽）
 + 简介
