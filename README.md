@@ -800,6 +800,10 @@ iqtree -s protein.afa -m TIM3+F+G4 -bb 1000 -nt AUTO
 ## 5. 基因岛分析
 基因组岛（英语：Genomic island，GI）是指一个基因组中，有证据显示可能来源于基因水平转移的一段。这一术语通常用于描述微生物，特别是细菌的基因组。GI中的基因可以编码多种功能的蛋白质，可以参与细菌共生或病理过程，并且可以帮助微生物适应环境。
 ### 5.1 使用IslandViewer分析和下载假单胞菌基因岛
++ 简介
+
+利用全基因组序列比对，寻找独立存在于某基因组而不存在于亲缘菌基因组中的大片段DNA
+
 + 从NCBI上下载PAO1的GeneBank数据，进入[IsLandViwer 4的Genome Upload](https://www.pathogenomics.sfu.ca/islandviewer/upload/)界面，提交序列的GeneBank数据。
 
 ![](./IMG/island2.png)
@@ -807,6 +811,10 @@ iqtree -s protein.afa -m TIM3+F+G4 -bb 1000 -nt AUTO
 + 结果分析
 
 ![](./IMG/island_result.png)
+
+圈图展示基因组上预测出的基因岛的分布、位置、不同颜色表示对应的分析方法，圈图的内圈是基因组G+C含量的变化，一般基因岛的G+C含量会显著偏离基因组G+C含量的平均水平。
+
+
 
 ### Easyfig下载
 + 简介
@@ -877,3 +885,4 @@ cd-hit --help
 + [使用IQ-TREE构建系统进化树](https://www.jianshu.com/p/f830282866cd)
 + [使用SignalP对蛋白序列进行信号肽预测](http://www.chenlianfu.com/?p=2746)
 + [NCBI上基因组文件格式及解释](https://www.jianshu.com/p/2e3c9b8de625)
++ [IslandViewer4|基因组岛在线预测](https://blog.csdn.net/weifanbio/article/details/122447033)
