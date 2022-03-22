@@ -806,7 +806,7 @@ iqtree -s protein.afa -m TIM3+F+G4 -bb 1000 -nt AUTO
 
 + 结果分析
 
-![](./IMG/island_r.png)
+![](./IMG/island_result.png)
 
 ### Easyfig下载
 + 简介
