@@ -1,0 +1,305 @@
+Island start	Island end	Length	Method	Gene name	Gene ID	Locus	Gene start	Gene end	Strand	Product	External Annotations
+289562	293798	4236	Predicted by at least one method	NP_248950.1		PA0259	289562	291004	-1	hypothetical protein	
+289562	293798	4236	Predicted by at least one method	NP_248951.1		PA0260	291154	293304	-1	hypothetical protein	
+289562	293798	4236	Predicted by at least one method	NP_248952.1		PA0261	293301	293798	-1	hypothetical protein	
+692898	707366	14468	Predicted by at least one method	NP_249329.1		PA0638	692898	693593	1	bacteriophage protein	
+692898	707366	14468	Predicted by at least one method	NP_249330.1		PA0639	693596	694366	1	hypothetical protein	
+692898	707366	14468	Predicted by at least one method	NP_249331.1		PA0640	694421	695023	1	bacteriophage protein	
+692898	707366	14468	Predicted by at least one method	NP_249332.1		PA0641	695082	698696	1	bacteriophage protein	
+692898	707366	14468	Predicted by at least one method	NP_249334.1		PA0643	699744	700835	1	hypothetical protein	
+692898	707366	14468	Predicted by at least one method	NP_249335.1		PA0644	700835	701170	1	hypothetical protein	
+692898	707366	14468	Predicted by at least one method	NP_249336.1		PA0645	701151	701381	1	hypothetical protein	
+692898	707366	14468	Predicted by at least one method	NP_249337.1		PA0646	701477	702529	1	hypothetical protein	
+692898	707366	14468	Predicted by at least one method	NP_249338.1		PA0647	702529	702831	1	hypothetical protein	
+692898	707366	14468	Predicted by at least one method	NP_249339.1		PA0648	702828	703058	1	hypothetical protein	
+692898	707366	14468	Predicted by at least one method	NP_249340.1	trpG	PA0649	703477	704082	1	anthranilate synthase component II	
+692898	707366	14468	Predicted by at least one method	NP_249341.1	trpD	PA0650	704084	705133	1	anthranilate phosphoribosyltransferase	
+692898	707366	14468	Predicted by at least one method	NP_249342.1	trpC	PA0651	705130	705966	1	indole-3-glycerol phosphate synthase	
+692898	707366	14468	Predicted by at least one method	NP_249343.1	vfr	PA0652	706028	706672	-1	cAMP-regulatory protein	
+692898	707366	14468	Predicted by at least one method	NP_249344.1		PA0653	706944	707366	1	hypothetical protein	
+696088	703161	7073	Predicted by at least one method	NP_249332.1		PA0641	695082	698696	1	bacteriophage protein	
+696088	703161	7073	Predicted by at least one method	NP_249334.1		PA0643	699744	700835	1	hypothetical protein	
+696088	703161	7073	Predicted by at least one method	NP_249335.1		PA0644	700835	701170	1	hypothetical protein	
+696088	703161	7073	Predicted by at least one method	NP_249336.1		PA0645	701151	701381	1	hypothetical protein	
+696088	703161	7073	Predicted by at least one method	NP_249337.1		PA0646	701477	702529	1	hypothetical protein	
+696088	703161	7073	Predicted by at least one method	NP_249338.1		PA0647	702529	702831	1	hypothetical protein	
+696088	703161	7073	Predicted by at least one method	NP_249339.1		PA0648	702828	703058	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249401.1	gloA2	PA0710	782570	782965	1	lactoylglutathione lyase	
+782570	792993	10423	Predicted by at least one method	NP_249402.1		PA0711	783009	783515	-1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249403.1		PA0712	783576	783833	-1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249404.1		PA0713	784173	784466	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249405.1		PA0714	784698	785174	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249406.1		PA0715	785969	786925	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249407.1		PA0716	786928	788253	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249409.1		PA0718	789360	789650	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249410.1		PA0719	789654	790031	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249411.1		PA0720	790166	790600	1	helix destabilizing protein of bacteriophage Pf1	
+782570	792993	10423	Predicted by at least one method	NP_249412.1		PA0721	790617	790709	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249413.1		PA0722	790722	790973	1	hypothetical protein	
+782570	792993	10423	Predicted by at least one method	NP_249414.1	coaB	PA0723	790986	791234	1	phage coat protein B	
+782570	792993	10423	Predicted by at least one method	NP_249415.1		PA0724	791370	792632	1	phage coat protein A	
+782570	792993	10423	Predicted by at least one method	NP_249416.1		PA0725	792637	792993	1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249666.1		PA0975	1058812	1059606	1	radical activating enzyme	
+1058812	1080015	21203	Predicted by at least one method	NP_249667.1		PA0976	1059622	1060296	1	7-cyano-7-deazaguanine synthase	
+1058812	1080015	21203	Predicted by at least one method	NP_249669.1		PA0978	1061207	1062034	-1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249670.1		PA0979	1062061	1062369	-1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249672.1		PA0981	1062921	1063544	1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249673.1		PA0982	1064555	1065103	-1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249674.1		PA0983	1065138	1065425	1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249675.1		PA0984	1065970	1066296	1	colicin immunity protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249676.1	pyoS5	PA0985	1066321	1067817	-1	pyocin S5	
+1058812	1080015	21203	Predicted by at least one method	NP_249677.1		PA0986	1068193	1068456	1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249678.1		PA0987	1068489	1069331	1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249679.1		PA0988	1069769	1070173	1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249680.1		PA0989	1070294	1070854	-1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249681.1		PA0990	1071239	1071877	-1	hypothetical protein	
+1058812	1080015	21203	Predicted by at least one method	NP_249683.1	cupC1	PA0992	1073285	1073902	1	fimbrial subunit CupC1	
+1058812	1080015	21203	Predicted by at least one method	NP_249684.1	cupC2	PA0993	1073960	1074673	1	chaperone CupC2	
+1058812	1080015	21203	Predicted by at least one method	NP_249685.1	cupC3	PA0994	1074784	1077303	1	usher CupC3	
+1058812	1080015	21203	Predicted by at least one method	NP_249686.1	ogt	PA0995	1077383	1077904	-1	methylated-DNA--protein-cysteine methyltransferase	
+1058812	1080015	21203	Predicted by at least one method	NP_249687.1	pqsA	PA0996	1078462	1080015	1	anthranilate--CoA ligase	
+1058812	1080015	21203	Predicted by at least one method	NP_249688.1	pqsB	PA0997	1080009	1080860	1	hypothetical protein	
+1240584	1251154	10570	Predicted by at least one method	NP_249839.1	toxA	PA1148	1240584	1242500	-1	exotoxin A	Virulence gene(VFDB,Victors)
+1240584	1251154	10570	Predicted by at least one method	NP_249840.1		PA1149	1242750	1243118	-1	hypothetical protein	
+1240584	1251154	10570	Predicted by at least one method	NP_249841.1	pys2	PA1150	1243594	1245663	1	pyocin-S2	
+1240584	1251154	10570	Predicted by at least one method	NP_249842.1	imm2	PA1151	1245665	1245928	1	pyocin-S2 immunity protein	
+1240584	1251154	10570	Predicted by at least one method	NP_249844.1		PA1153	1247932	1248486	-1	hypothetical protein	
+1240584	1251154	10570	Predicted by at least one method	NP_249845.1		PA1154	1249019	1249552	-1	hypothetical protein	
+1240584	1251154	10570	Predicted by at least one method	NP_249846.1	nrdB	PA1155	1249907	1251154	-1	ribonucleotide-diphosphate reductase subunit beta	
+1480215	1508720	28505	Predicted by at least one method	NP_250058.1		PA1367	1480215	1481051	-1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250059.1		PA1368	1481334	1482758	-1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250060.1		PA1369	1483123	1483875	1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250061.1		PA1370	1483898	1485763	1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250062.1		PA1371	1486266	1486967	-1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250063.1		PA1372	1486960	1489095	-1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250064.1	fabF2	PA1373	1489815	1491083	-1	3-oxoacyl-ACP synthase	
+1480215	1508720	28505	Predicted by at least one method	NP_250065.1		PA1374	1491192	1491698	1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250066.1	pdxB	PA1375	1491913	1493055	1	erythronate-4-phosphate dehydrogenase	
+1480215	1508720	28505	Predicted by at least one method	NP_250067.1	aceK	PA1376	1493090	1494823	-1	bifunctional isocitrate dehydrogenase kinase/phosphatase	
+1480215	1508720	28505	Predicted by at least one method	NP_250068.1		PA1377	1494959	1495492	1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250069.1		PA1378	1495635	1495997	1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250070.1		PA1379	1496087	1496920	-1	short-chain dehydrogenase	
+1480215	1508720	28505	Predicted by at least one method	NP_250071.1		PA1380	1497012	1497977	1	transcriptional regulator	
+1480215	1508720	28505	Predicted by at least one method	NP_250072.1		PA1381	1498338	1498829	1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250073.1		PA1382	1498813	1501092	1	type II secretion system protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250074.1		PA1383	1501611	1503416	1	hypothetical protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250075.1	galE	PA1384	1503568	1504581	1	UDP-glucose 4-epimerase	
+1480215	1508720	28505	Predicted by at least one method	NP_250076.1		PA1385	1504605	1505729	1	glycosyl transferase family protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250077.1		PA1386	1505749	1507017	1	ABC transporter ATP-binding protein	
+1480215	1508720	28505	Predicted by at least one method	NP_250078.1		PA1387	1507164	1508720	1	hypothetical protein	
+1483898	1489095	5197	Predicted by at least one method	NP_250061.1		PA1370	1483898	1485763	1	hypothetical protein	
+1483898	1489095	5197	Predicted by at least one method	NP_250062.1		PA1371	1486266	1486967	-1	hypothetical protein	
+1483898	1489095	5197	Predicted by at least one method	NP_250063.1		PA1372	1486960	1489095	-1	hypothetical protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250076.1		PA1385	1504605	1505729	1	glycosyl transferase family protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250077.1		PA1386	1505749	1507017	1	ABC transporter ATP-binding protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250078.1		PA1387	1507164	1508720	1	hypothetical protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250079.1		PA1388	1508737	1509465	1	hypothetical protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250080.1		PA1389	1509562	1511046	1	glycosyl transferase family protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250081.1		PA1390	1511232	1512266	1	glycosyl transferase family protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250082.1		PA1391	1512260	1514035	1	glycosyl transferase family protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250083.1		PA1392	1514036	1515280	1	hypothetical protein	
+1504605	1516687	12082	Predicted by at least one method	NP_250084.1	cysC	PA1393	1515337	1515927	-1	adenylyl-sulfate kinase	
+1504605	1516687	12082	Predicted by at least one method	NP_250085.1		PA1394	1516433	1516687	1	hypothetical protein	
+2310357	2316626	6269	Predicted by at least one method	NP_250788.1		PA2098	2309443	2310372	1	esterase	
+2310357	2316626	6269	Predicted by at least one method	NP_250789.1		PA2099	2310357	2311112	1	short-chain dehydrogenase	
+2310357	2316626	6269	Predicted by at least one method	NP_250790.1		PA2100	2311333	2312766	-1	transcriptional regulator	
+2310357	2316626	6269	Predicted by at least one method	NP_250791.1		PA2101	2312899	2313789	1	hypothetical protein	
+2310357	2316626	6269	Predicted by at least one method	NP_250792.1		PA2102	2313791	2314249	1	hypothetical protein	
+2310357	2316626	6269	Predicted by at least one method	NP_250793.1		PA2103	2314512	2315690	1	molybdopterin biosynthesis protein MoeB	
+2310357	2316626	6269	Predicted by at least one method	NP_250794.1		PA2104	2315709	2316626	1	cysteine synthase	
+3017234	3025508	8274	Predicted by at least one method	NP_251359.1		PA2669	3017234	3017818	-1	hypothetical protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251360.1		PA2670	3017818	3018804	-1	hypothetical protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251361.1		PA2671	3018848	3019927	-1	hypothetical protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251362.1		PA2672	3019917	3020507	-1	type II secretion system protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251363.1		PA2673	3020504	3020929	-1	type II secretion system protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251364.1		PA2674	3020929	3021339	-1	type II secretion system protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251365.1		PA2675	3021308	3021742	-1	type II secretion system protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251366.1		PA2676	3021796	3022983	-1	type II secretion system protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251367.1		PA2677	3022988	3024715	-1	type II secretion protein	
+3017234	3025508	8274	Predicted by at least one method	NP_251368.1		PA2678	3024705	3025508	-1	ABC transporter permease	
+3524681	3550746	26065	Predicted by at least one method	NP_251831.1	wbpM	PA3141	3524681	3526678	-1	nucleotide sugar epimerase/dehydratase WbpM	
+3524681	3550746	26065	Predicted by at least one method	NP_251832.1		PA3142	3527429	3527734	-1	hypothetical protein	
+3524681	3550746	26065	Predicted by at least one method	YP_008719764.1		PA3143	3527670	3528212	-1	hypothetical protein	
+3524681	3550746	26065	Predicted by at least one method	NP_251835.1	wbpL	PA3145	3528428	3529447	-1	glycosyltransferase WbpL	
+3524681	3550746	26065	Predicted by at least one method	NP_251836.1	wbpK	PA3146	3529508	3530458	-1	NAD-dependent epimerase/dehydratase	
+3524681	3550746	26065	Predicted by at least one method	NP_251837.1	wbpJ	PA3147	3530467	3531708	-1	glycosyl transferase WbpJ	
+3524681	3550746	26065	Predicted by at least one method	NP_251838.1	wbpI	PA3148	3531751	3532815	-1	UDP-2,3-diacetamido-2,3-dideoxy-D-glucuronate 2-epimeras	
+3524681	3550746	26065	Predicted by at least one method	NP_251839.1	wbpH	PA3149	3532812	3533933	-1	glycosyltransferase WbpH	
+3524681	3550746	26065	Predicted by at least one method	NP_251840.1	wbpG	PA3150	3533948	3535081	-1	LPS biosynthesis protein WbpG	
+3524681	3550746	26065	Predicted by at least one method	NP_251841.1	hisF2	PA3151	3535216	3535971	-1	imidazole glycerol phosphate synthase subunit HisF	
+3524681	3550746	26065	Predicted by at least one method	NP_251842.1	hisH2	PA3152	3535971	3536579	-1	imidazole glycerol phosphate synthase subunit HisH	
+3524681	3550746	26065	Predicted by at least one method	NP_251843.1	wzx	PA3153	3536576	3537811	-1	O-antigen translocase	
+3524681	3550746	26065	Predicted by at least one method	NP_251844.1	wzy	PA3154	3537808	3539124	-1	B-band O-antigen polymerase	Virulence gene(VFDB)
+3524681	3550746	26065	Predicted by at least one method	NP_251845.1	wbpE	PA3155	3539128	3540207	-1	UDP-2-acetamido-2-deoxy-3-oxo-D-glucuronate aminotransferase	
+3524681	3550746	26065	Predicted by at least one method	NP_251846.1	wbpD	PA3156	3540210	3540785	-1	UDP-2-acetamido-3-amino-2, 3-dideoxy-D-glucuronate N-acetyltransferase	
+3524681	3550746	26065	Predicted by at least one method	NP_251847.1		PA3157	3540782	3542671	-1	acetyltransferase	
+3524681	3550746	26065	Predicted by at least one method	NP_251848.1	wbpB	PA3158	3542740	3543690	-1	UDP-N-acetyl-2-amino-2-deoxy-D-glucuronate oxidase	
+3524681	3550746	26065	Predicted by at least one method	NP_251849.1	wbpA	PA3159	3543764	3545074	-1	UDP-N-acetyl-d-glucosamine 6-dehydrogenase	
+3524681	3550746	26065	Predicted by at least one method	NP_251850.1	wzz	PA3160	3545881	3546927	-1	O-antigen chain length regulator	Virulence gene(VFDB,Victors)
+3524681	3550746	26065	Predicted by at least one method	NP_251851.1	himD	PA3161	3547689	3547973	-1	integration host factor subunit beta	
+3524681	3550746	26065	Predicted by at least one method	NP_251852.1	rpsA	PA3162	3548110	3549789	-1	30S ribosomal protein S1	
+3524681	3550746	26065	Predicted by at least one method	NP_251853.1	cmk	PA3163	3550057	3550746	-1	cytidylate kinase	
+4327126	4333216	6090	Predicted by at least one method	YP_008719770.1		PA3865a	4327395	4327559	1	hypothetical protein	
+4327126	4333216	6090	Predicted by at least one method	NP_252555.1		PA3866	4327697	4329991	-1	pyocin protein	
+4327126	4333216	6090	Predicted by at least one method	NP_252556.1		PA3867	4330321	4330896	1	DNA invertase	
+4327126	4333216	6090	Predicted by at least one method	NP_252557.1		PA3868	4331452	4332462	1	hypothetical protein	
+4327126	4333216	6090	Predicted by at least one method	NP_252558.1		PA3869	4332653	4333036	1	hypothetical protein	
+5263249	5271424	8175	Predicted by at least one method	YP_008719782.1		PA4690	5262642	5263262	-1	hypothetical protein	
+5263249	5271424	8175	Predicted by at least one method	YP_008719783.1		PA4690a	5263249	5263956	-1	paraquat-inducible protein A	
+5263249	5271424	8175	Predicted by at least one method	NP_253379.1		PA4691	5269803	5270411	-1	sulfite oxidase subunit YedZ	
+5263249	5271424	8175	Predicted by at least one method	NP_253380.1		PA4692	5270411	5271424	-1	sulfite oxidase subunit YedY	Virulence gene(Victors)
+5926134	5930605	4471	Predicted by at least one method	NP_253951.1		PA5264	5926134	5927105	-1	hypothetical protein	
+5926134	5930605	4471	Predicted by at least one method	NP_253952.1		PA5265	5927336	5930605	-1	hypothetical protein	
+5926134	5930605	4471	Predicted by at least one method	NP_253953.1		PA5266	5930602	5932677	-1	hypothetical protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249329.1		PA0638	692898	693593	1	bacteriophage protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249330.1		PA0639	693596	694366	1	hypothetical protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249331.1		PA0640	694421	695023	1	bacteriophage protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249332.1		PA0641	695082	698696	1	bacteriophage protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249334.1		PA0643	699744	700835	1	hypothetical protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249335.1		PA0644	700835	701170	1	hypothetical protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249336.1		PA0645	701151	701381	1	hypothetical protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249337.1		PA0646	701477	702529	1	hypothetical protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249338.1		PA0647	702529	702831	1	hypothetical protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249339.1		PA0648	702828	703058	1	hypothetical protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249340.1	trpG	PA0649	703477	704082	1	anthranilate synthase component II	
+692898	707366	14468	IslandPath-DIMOB	NP_249341.1	trpD	PA0650	704084	705133	1	anthranilate phosphoribosyltransferase	
+692898	707366	14468	IslandPath-DIMOB	NP_249342.1	trpC	PA0651	705130	705966	1	indole-3-glycerol phosphate synthase	
+692898	707366	14468	IslandPath-DIMOB	NP_249343.1	vfr	PA0652	706028	706672	-1	cAMP-regulatory protein	
+692898	707366	14468	IslandPath-DIMOB	NP_249344.1		PA0653	706944	707366	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249401.1	gloA2	PA0710	782570	782965	1	lactoylglutathione lyase	
+782570	792993	10423	IslandPath-DIMOB	NP_249402.1		PA0711	783009	783515	-1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249403.1		PA0712	783576	783833	-1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249404.1		PA0713	784173	784466	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249405.1		PA0714	784698	785174	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249406.1		PA0715	785969	786925	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249407.1		PA0716	786928	788253	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249409.1		PA0718	789360	789650	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249410.1		PA0719	789654	790031	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249411.1		PA0720	790166	790600	1	helix destabilizing protein of bacteriophage Pf1	
+782570	792993	10423	IslandPath-DIMOB	NP_249412.1		PA0721	790617	790709	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249413.1		PA0722	790722	790973	1	hypothetical protein	
+782570	792993	10423	IslandPath-DIMOB	NP_249414.1	coaB	PA0723	790986	791234	1	phage coat protein B	
+782570	792993	10423	IslandPath-DIMOB	NP_249415.1		PA0724	791370	792632	1	phage coat protein A	
+782570	792993	10423	IslandPath-DIMOB	NP_249416.1		PA0725	792637	792993	1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249666.1		PA0975	1058812	1059606	1	radical activating enzyme	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249667.1		PA0976	1059622	1060296	1	7-cyano-7-deazaguanine synthase	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249669.1		PA0978	1061207	1062034	-1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249670.1		PA0979	1062061	1062369	-1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249672.1		PA0981	1062921	1063544	1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249673.1		PA0982	1064555	1065103	-1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249674.1		PA0983	1065138	1065425	1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249675.1		PA0984	1065970	1066296	1	colicin immunity protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249676.1	pyoS5	PA0985	1066321	1067817	-1	pyocin S5	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249677.1		PA0986	1068193	1068456	1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249678.1		PA0987	1068489	1069331	1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249679.1		PA0988	1069769	1070173	1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249680.1		PA0989	1070294	1070854	-1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249681.1		PA0990	1071239	1071877	-1	hypothetical protein	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249683.1	cupC1	PA0992	1073285	1073902	1	fimbrial subunit CupC1	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249684.1	cupC2	PA0993	1073960	1074673	1	chaperone CupC2	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249685.1	cupC3	PA0994	1074784	1077303	1	usher CupC3	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249686.1	ogt	PA0995	1077383	1077904	-1	methylated-DNA--protein-cysteine methyltransferase	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249687.1	pqsA	PA0996	1078462	1080015	1	anthranilate--CoA ligase	
+1058812	1080015	21203	IslandPath-DIMOB	NP_249688.1	pqsB	PA0997	1080009	1080860	1	hypothetical protein	
+1240584	1251154	10570	IslandPath-DIMOB	NP_249839.1	toxA	PA1148	1240584	1242500	-1	exotoxin A	VFDB,Victors
+1240584	1251154	10570	IslandPath-DIMOB	NP_249840.1		PA1149	1242750	1243118	-1	hypothetical protein	
+1240584	1251154	10570	IslandPath-DIMOB	NP_249841.1	pys2	PA1150	1243594	1245663	1	pyocin-S2	
+1240584	1251154	10570	IslandPath-DIMOB	NP_249842.1	imm2	PA1151	1245665	1245928	1	pyocin-S2 immunity protein	
+1240584	1251154	10570	IslandPath-DIMOB	NP_249844.1		PA1153	1247932	1248486	-1	hypothetical protein	
+1240584	1251154	10570	IslandPath-DIMOB	NP_249845.1		PA1154	1249019	1249552	-1	hypothetical protein	
+1240584	1251154	10570	IslandPath-DIMOB	NP_249846.1	nrdB	PA1155	1249907	1251154	-1	ribonucleotide-diphosphate reductase subunit beta	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250058.1		PA1367	1480215	1481051	-1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250059.1		PA1368	1481334	1482758	-1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250060.1		PA1369	1483123	1483875	1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250061.1		PA1370	1483898	1485763	1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250062.1		PA1371	1486266	1486967	-1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250063.1		PA1372	1486960	1489095	-1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250064.1	fabF2	PA1373	1489815	1491083	-1	3-oxoacyl-ACP synthase	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250065.1		PA1374	1491192	1491698	1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250066.1	pdxB	PA1375	1491913	1493055	1	erythronate-4-phosphate dehydrogenase	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250067.1	aceK	PA1376	1493090	1494823	-1	bifunctional isocitrate dehydrogenase kinase/phosphatase	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250068.1		PA1377	1494959	1495492	1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250069.1		PA1378	1495635	1495997	1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250070.1		PA1379	1496087	1496920	-1	short-chain dehydrogenase	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250071.1		PA1380	1497012	1497977	1	transcriptional regulator	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250072.1		PA1381	1498338	1498829	1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250073.1		PA1382	1498813	1501092	1	type II secretion system protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250074.1		PA1383	1501611	1503416	1	hypothetical protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250075.1	galE	PA1384	1503568	1504581	1	UDP-glucose 4-epimerase	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250076.1		PA1385	1504605	1505729	1	glycosyl transferase family protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250077.1		PA1386	1505749	1507017	1	ABC transporter ATP-binding protein	
+1480215	1508720	28505	IslandPath-DIMOB	NP_250078.1		PA1387	1507164	1508720	1	hypothetical protein	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251831.1	wbpM	PA3141	3524681	3526678	-1	nucleotide sugar epimerase/dehydratase WbpM	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251832.1		PA3142	3527429	3527734	-1	hypothetical protein	
+3524681	3550746	26065	IslandPath-DIMOB	YP_008719764.1		PA3143	3527670	3528212	-1	hypothetical protein	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251835.1	wbpL	PA3145	3528428	3529447	-1	glycosyltransferase WbpL	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251836.1	wbpK	PA3146	3529508	3530458	-1	NAD-dependent epimerase/dehydratase	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251837.1	wbpJ	PA3147	3530467	3531708	-1	glycosyl transferase WbpJ	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251838.1	wbpI	PA3148	3531751	3532815	-1	UDP-2,3-diacetamido-2,3-dideoxy-D-glucuronate 2-epimeras	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251839.1	wbpH	PA3149	3532812	3533933	-1	glycosyltransferase WbpH	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251840.1	wbpG	PA3150	3533948	3535081	-1	LPS biosynthesis protein WbpG	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251841.1	hisF2	PA3151	3535216	3535971	-1	imidazole glycerol phosphate synthase subunit HisF	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251842.1	hisH2	PA3152	3535971	3536579	-1	imidazole glycerol phosphate synthase subunit HisH	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251843.1	wzx	PA3153	3536576	3537811	-1	O-antigen translocase	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251844.1	wzy	PA3154	3537808	3539124	-1	B-band O-antigen polymerase	VFDB
+3524681	3550746	26065	IslandPath-DIMOB	NP_251845.1	wbpE	PA3155	3539128	3540207	-1	UDP-2-acetamido-2-deoxy-3-oxo-D-glucuronate aminotransferase	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251846.1	wbpD	PA3156	3540210	3540785	-1	UDP-2-acetamido-3-amino-2, 3-dideoxy-D-glucuronate N-acetyltransferase	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251847.1		PA3157	3540782	3542671	-1	acetyltransferase	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251848.1	wbpB	PA3158	3542740	3543690	-1	UDP-N-acetyl-2-amino-2-deoxy-D-glucuronate oxidase	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251849.1	wbpA	PA3159	3543764	3545074	-1	UDP-N-acetyl-d-glucosamine 6-dehydrogenase	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251850.1	wzz	PA3160	3545881	3546927	-1	O-antigen chain length regulator	VFDB,Victors
+3524681	3550746	26065	IslandPath-DIMOB	NP_251851.1	himD	PA3161	3547689	3547973	-1	integration host factor subunit beta	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251852.1	rpsA	PA3162	3548110	3549789	-1	30S ribosomal protein S1	
+3524681	3550746	26065	IslandPath-DIMOB	NP_251853.1	cmk	PA3163	3550057	3550746	-1	cytidylate kinase	
+696088	703161	7073	IslandPick	NP_249332.1		PA0641	695082	698696	1	bacteriophage protein	
+696088	703161	7073	IslandPick	NP_249334.1		PA0643	699744	700835	1	hypothetical protein	
+696088	703161	7073	IslandPick	NP_249335.1		PA0644	700835	701170	1	hypothetical protein	
+696088	703161	7073	IslandPick	NP_249336.1		PA0645	701151	701381	1	hypothetical protein	
+696088	703161	7073	IslandPick	NP_249337.1		PA0646	701477	702529	1	hypothetical protein	
+696088	703161	7073	IslandPick	NP_249338.1		PA0647	702529	702831	1	hypothetical protein	
+696088	703161	7073	IslandPick	NP_249339.1		PA0648	702828	703058	1	hypothetical protein	
+4327126	4333216	6090	IslandPick	YP_008719770.1		PA3865a	4327395	4327559	1	hypothetical protein	
+4327126	4333216	6090	IslandPick	NP_252555.1		PA3866	4327697	4329991	-1	pyocin protein	
+4327126	4333216	6090	IslandPick	NP_252556.1		PA3867	4330321	4330896	1	DNA invertase	
+4327126	4333216	6090	IslandPick	NP_252557.1		PA3868	4331452	4332462	1	hypothetical protein	
+4327126	4333216	6090	IslandPick	NP_252558.1		PA3869	4332653	4333036	1	hypothetical protein	
+289562	293798	4236	SIGI-HMM	NP_248950.1		PA0259	289562	291004	-1	hypothetical protein	
+289562	293798	4236	SIGI-HMM	NP_248951.1		PA0260	291154	293304	-1	hypothetical protein	
+289562	293798	4236	SIGI-HMM	NP_248952.1		PA0261	293301	293798	-1	hypothetical protein	
+1483898	1489095	5197	SIGI-HMM	NP_250061.1		PA1370	1483898	1485763	1	hypothetical protein	
+1483898	1489095	5197	SIGI-HMM	NP_250062.1		PA1371	1486266	1486967	-1	hypothetical protein	
+1483898	1489095	5197	SIGI-HMM	NP_250063.1		PA1372	1486960	1489095	-1	hypothetical protein	
+1504605	1516687	12082	SIGI-HMM	NP_250076.1		PA1385	1504605	1505729	1	glycosyl transferase family protein	
+1504605	1516687	12082	SIGI-HMM	NP_250077.1		PA1386	1505749	1507017	1	ABC transporter ATP-binding protein	
+1504605	1516687	12082	SIGI-HMM	NP_250078.1		PA1387	1507164	1508720	1	hypothetical protein	
+1504605	1516687	12082	SIGI-HMM	NP_250079.1		PA1388	1508737	1509465	1	hypothetical protein	
+1504605	1516687	12082	SIGI-HMM	NP_250080.1		PA1389	1509562	1511046	1	glycosyl transferase family protein	
+1504605	1516687	12082	SIGI-HMM	NP_250081.1		PA1390	1511232	1512266	1	glycosyl transferase family protein	
+1504605	1516687	12082	SIGI-HMM	NP_250082.1		PA1391	1512260	1514035	1	glycosyl transferase family protein	
+1504605	1516687	12082	SIGI-HMM	NP_250083.1		PA1392	1514036	1515280	1	hypothetical protein	
+1504605	1516687	12082	SIGI-HMM	NP_250084.1	cysC	PA1393	1515337	1515927	-1	adenylyl-sulfate kinase	
+1504605	1516687	12082	SIGI-HMM	NP_250085.1		PA1394	1516433	1516687	1	hypothetical protein	
+2310357	2316626	6269	SIGI-HMM	NP_250788.1		PA2098	2309443	2310372	1	esterase	
+2310357	2316626	6269	SIGI-HMM	NP_250789.1		PA2099	2310357	2311112	1	short-chain dehydrogenase	
+2310357	2316626	6269	SIGI-HMM	NP_250790.1		PA2100	2311333	2312766	-1	transcriptional regulator	
+2310357	2316626	6269	SIGI-HMM	NP_250791.1		PA2101	2312899	2313789	1	hypothetical protein	
+2310357	2316626	6269	SIGI-HMM	NP_250792.1		PA2102	2313791	2314249	1	hypothetical protein	
+2310357	2316626	6269	SIGI-HMM	NP_250793.1		PA2103	2314512	2315690	1	molybdopterin biosynthesis protein MoeB	
+2310357	2316626	6269	SIGI-HMM	NP_250794.1		PA2104	2315709	2316626	1	cysteine synthase	
+3017234	3025508	8274	SIGI-HMM	NP_251359.1		PA2669	3017234	3017818	-1	hypothetical protein	
+3017234	3025508	8274	SIGI-HMM	NP_251360.1		PA2670	3017818	3018804	-1	hypothetical protein	
+3017234	3025508	8274	SIGI-HMM	NP_251361.1		PA2671	3018848	3019927	-1	hypothetical protein	
+3017234	3025508	8274	SIGI-HMM	NP_251362.1		PA2672	3019917	3020507	-1	type II secretion system protein	
+3017234	3025508	8274	SIGI-HMM	NP_251363.1		PA2673	3020504	3020929	-1	type II secretion system protein	
+3017234	3025508	8274	SIGI-HMM	NP_251364.1		PA2674	3020929	3021339	-1	type II secretion system protein	
+3017234	3025508	8274	SIGI-HMM	NP_251365.1		PA2675	3021308	3021742	-1	type II secretion system protein	
+3017234	3025508	8274	SIGI-HMM	NP_251366.1		PA2676	3021796	3022983	-1	type II secretion system protein	
+3017234	3025508	8274	SIGI-HMM	NP_251367.1		PA2677	3022988	3024715	-1	type II secretion protein	
+3017234	3025508	8274	SIGI-HMM	NP_251368.1		PA2678	3024705	3025508	-1	ABC transporter permease	
+5263249	5271424	8175	SIGI-HMM	YP_008719782.1		PA4690	5262642	5263262	-1	hypothetical protein	
+5263249	5271424	8175	SIGI-HMM	YP_008719783.1		PA4690a	5263249	5263956	-1	paraquat-inducible protein A	
+5263249	5271424	8175	SIGI-HMM	NP_253379.1		PA4691	5269803	5270411	-1	sulfite oxidase subunit YedZ	
+5263249	5271424	8175	SIGI-HMM	NP_253380.1		PA4692	5270411	5271424	-1	sulfite oxidase subunit YedY	Victors
+5926134	5930605	4471	SIGI-HMM	NP_253951.1		PA5264	5926134	5927105	-1	hypothetical protein	
+5926134	5930605	4471	SIGI-HMM	NP_253952.1		PA5265	5927336	5930605	-1	hypothetical protein	
+5926134	5930605	4471	SIGI-HMM	NP_253953.1		PA5266	5930602	5932677	-1	hypothetical protein	
